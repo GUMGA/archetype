@@ -1,0 +1,68 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div id="buttons" class="col-md-5" style="margin-bottom: 10px;">
+                <a href="${symbol_pound}/insert" class="btn btn-primary" id="btnNovo">
+                    <span class="glyphicon glyphicon-plus"></span> 
+                    Novo
+                </a>
+                <button id="btnExcluir" class="btn btn-danger" ng-click="ctrl.removeSelection()" ng-disabled="selection.length == 0">
+                    <span class="glyphicon glyphicon-trash"></span> 
+                    Remover
+                </button>
+            </div>
+
+            <div class="col-md-7 gumga-crud-search-simple">
+                <gumga:search on-search="ctrl.search(${symbol_dollar}text, ${symbol_dollar}fields)" search-text="search.text" select-fields="search.fields" ng-disabled="search.showAdvanced" >
+                    <gumga:search:field field="descricao" label="Descricao" selected="true"></gumga:search:field>
+                </gumga:search>
+                <button type="button" btn-checkbox ng-model="search.showAdvanced" class="btn btn-default btn-switch-filters" tooltip="Pesquisa avan�ada">
+                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="col-md-12" ng-show="search.showAdvanced">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Pesquisa avan�ada</div>
+                    <div class="panel-body">
+                        <gumga:filter ng-model="search.advanced" size="sm" is-open="search.isAdvancedOpen">
+                            <gumga:filter:item field="descricao" label="Descricao"></gumga:filter:item>
+                            <gumga:filter:item field="valor" label="Valor" type="integer"></gumga:filter:item>
+                            <gumga:filter:item field="ativo" label="Ativo"></gumga:filter:item>
+                        </gumga:filter>
+                        <button class="btn btn-primary btn-search" type="submit" ng-click="ctrl.advancedSearch(search.advanced)" ng-disabled="search.isAdvancedOpen">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=${symbol_escape}"col-xs-12${symbol_escape}">
+            <gumga:table
+                values="list.values"
+                class="table-condensed table-striped"
+                selectable="multiple"
+                selection="selection"
+                sort-by="sort.field"
+                sort-direction="sort.direction"
+                empty-values-message="Sem resultados">
+                <gumga:column sort-field="descricao" label="Descricao">{{${symbol_dollar}value.descricao}}</gumga:column>
+                <gumga:column sort-field="valor" label="Valor">{{${symbol_dollar}value.valor|currency}}</gumga:column>
+                <gumga:column sort-field="ativo" label="Ativo">{{${symbol_dollar}value.ativo?"ATIVO":"INATIVO"}}</gumga:column>
+                <gumga:column label="">
+                    <div class="text-right">
+                        <a href="${symbol_pound}/edit/{{${symbol_dollar}value.id}}" class="btn btn-primary" title="Editar">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                    </div>
+                </gumga:column>
+            </gumga:table>
+
+            <gumga:pagination ng-show="numberOfPages > 1" items-per-page="list.pageSize" total-items="list.count" ng-model="page" num-pages="numberOfPages" boundary-links="true"></gumga:pagination>
+        </div>
+
+    </div>
+</div>

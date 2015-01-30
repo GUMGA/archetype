@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form name="entityForm" method="POST" ng-submit="ctrl.save(${symbol_dollar}event, entity)" gumga-form-errors gumga-ng-model-errors>
+
+
+            <div class="form-group" gumga-form-group="descricao">
+                <label class="control-label">Descricao</label>
+                <input name="descricao" class="form-control" ng-model="entity.descricao" required="true"autofocus />
+                <gumga:input:errors field="descricao"></gumga:input:errors>
+            </div>
+            <div class="form-group" gumga-form-group="valor">
+                <label class="control-label">Valor</label>
+                <input name="descricao" class="form-control" ng-model="entity.valor" required="true" gumga-number decimal-places="2" />
+                <gumga:input:errors field="valor"></gumga:input:errors>
+            </div>
+            <div class="form-group" gumga-form-group="ativo">
+                <label><input type="checkbox" name="ativo" ng-model="entity.ativo" /> Ativo</label>
+                <gumga:input:errors field="ativo"></gumga:input:errors>
+            </div>	
+            <div class="text-right">
+
+                <input type="submit" value="Salvar" class="btn btn-primary" ng-disabled="ctrl.saving || entityForm.${symbol_dollar}invalid" />
+
+                <a href="${symbol_pound}" class="btn btn-default">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
