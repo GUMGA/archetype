@@ -85,7 +85,17 @@ define([
 	}]);
 	
 	
-	module.run(['$rootScope', '$state', 'GumgaGrowl', 'GumgaMessage', function($rootScope, $state, GumgaGrowl, GumgaMessage) {
+	module.run(['$rootScope', '$state', 'GumgaGrowl', 'GumgaMessage', '$injector', function($rootScope, $state, GumgaGrowl, GumgaMessage,$injector) {
+
+        $rootScope.gumgaToken="empty" + (new Date().getTime()); 
+
+        $injector.get("$http").defaults.transformRequest = function (data, headersGetter) {
+                if ($rootScope.gumgaToken)
+                    headersGetter()['gumgaToken'] = "value " + $rootScope.gumgaToken;
+                if (data) {
+                    return angular.toJson(data);
+                }
+            };
 		
 		$rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
 			if (!$state.get(fromState.name).confirmExit) {
