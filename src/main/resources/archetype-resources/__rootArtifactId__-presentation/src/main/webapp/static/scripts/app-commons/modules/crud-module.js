@@ -87,11 +87,11 @@ define([
 	
 	module.run(['$rootScope', '$state', 'GumgaGrowl', 'GumgaMessage', '$injector', function($rootScope, $state, GumgaGrowl, GumgaMessage,$injector) {
 
-        $rootScope.gumgaToken="empty" + (new Date().getTime()); 
+        $rootScope.gumgaToken="asdasdasdasd123123123"; 
 
         $injector.get("$http").defaults.transformRequest = function (data, headersGetter) {
                 if ($rootScope.gumgaToken)
-                    headersGetter()['gumgaToken'] = "value " + $rootScope.gumgaToken;
+                    headersGetter()['gumgaToken'] = $rootScope.gumgaToken;
                 if (data) {
                     return angular.toJson(data);
                 }
