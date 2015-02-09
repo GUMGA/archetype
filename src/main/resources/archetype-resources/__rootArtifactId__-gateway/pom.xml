@@ -22,7 +22,6 @@
         <dependency>
             <groupId>gumga.framework</groupId>
             <artifactId>gumga-presentation</artifactId>
-            <version>0.1</version>
             <type>jar</type>
         </dependency>
     </dependencies>
