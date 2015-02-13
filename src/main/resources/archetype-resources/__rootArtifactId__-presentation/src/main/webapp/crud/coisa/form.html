@@ -20,12 +20,33 @@
                 <label><input type="checkbox" name="ativo" ng-model="entity.ativo" /> Ativo</label>
                 <gumga:input:errors field="ativo"></gumga:input:errors>
             </div>	
+            
+             <div class="text-left">
+                <button ng-disabled="dataOlder" type="button" class="btn btn-info" ng-click="showOlder = !showOlder" ng-show="!checkboxEnable" >Older Versions</button>
+                <div ng-show="showOlder == true">
+                    <gumga:accordion close-others="false">
+                        <gumga:accordion:group is-open="isopen" ng-repeat="v in older" 
+                                               heading="Editado por: {{v.gumgaRevisionEntity.userLogin ? (v.gumgaRevisionEntity.userLogin) : ' sistema'}} em: {{v.gumgaRevisionEntity.moment | date :'fullDate' }} from ip: {{v.gumgaRevisionEntity.ip ? (v.gumgaRevisionEntity.ip) : ' 0.0.0.0'}}">
+                            {{v.object}}
+                            
+                        </gumga:accordion:group>
+                    </gumga:accordion>
+                </div>
+            </div> 
+
             <div class="text-right">
+
+                <label ng-show="checkboxEnable"><input type="checkbox" name="continuarInserindo" ng-model="entity.continuarInserindo"/> Continuar Inserindo</label>
 
                 <input type="submit" value="Salvar" class="btn btn-primary" ng-disabled="ctrl.saving || entityForm.${symbol_dollar}invalid" />
 
                 <a href="${symbol_pound}" class="btn btn-default">Cancelar</a>
             </div>
+
+
+
+
+
         </form>
     </div>
 </div>

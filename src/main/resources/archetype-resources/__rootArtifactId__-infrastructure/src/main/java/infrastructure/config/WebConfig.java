@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.Ordered;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -23,13 +22,10 @@ import org.springframework.validation.beanvalidation.MethodValidationPostProcess
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -39,6 +35,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
+import gumga.framework.security.GumgaRequestFilter;
 
 @Configuration
 @EnableWebMvc
@@ -101,6 +98,16 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setMaxUploadSize(1024 * 1024 * 1024);
         return resolver;
+    }
+
+    @Bean
+    public GumgaRequestFilter gumgaRequestFilter() {
+        return new GumgaRequestFilter("${package}.${parentArtifactId}");
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(gumgaRequestFilter()); 
     }
 
 }

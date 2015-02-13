@@ -24,6 +24,11 @@
             <artifactId>gumga-application</artifactId>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>gumga.framework</groupId>
+            <artifactId>gumga-security</artifactId>
+            <type>jar</type>
+        </dependency>
         <!-- DEPENDENCIAS em geral-->
         <dependency>
             <groupId>commons-fileupload</groupId>

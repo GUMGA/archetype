@@ -4,6 +4,7 @@
 package ${package}.${parentArtifactId}.domain.model;
 
 import gumga.framework.domain.GumgaModel;
+import gumga.framework.domain.GumgaMultitenancy;
 import java.io.Serializable;
 
 import java.math.BigDecimal;
@@ -13,7 +14,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.envers.Audited;
 
+@Audited
+@GumgaMultitenancy
 @Entity
 public class Coisa extends GumgaModel<Long> implements Serializable {
 

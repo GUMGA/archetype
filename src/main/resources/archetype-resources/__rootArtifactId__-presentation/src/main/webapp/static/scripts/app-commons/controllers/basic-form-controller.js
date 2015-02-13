@@ -3,7 +3,7 @@ define(['jquery', 'angular-class', './basic-crud-controller'], function($, Angul
 	
 
 	return AngularClass.create({
-		$inject : ['$scope', '$state', '$http', 'GumgaGrowl', 'i18n', 'EntityService', 'entity', 'GumgaKeys'],
+		$inject : ['$scope', '$state', '$http', 'GumgaGrowl', 'i18n', 'EntityService', 'entity', 'GumgaKeys','$location'],
 		extends: BasicCrudController,
 		prototype : {
 			initialize : function() {
@@ -17,6 +17,14 @@ define(['jquery', 'angular-class', './basic-crud-controller'], function($, Angul
 				this.EntityService.on('load-default-values-finished save-finished update-finished', $.unblockUI);
 				
 				this.GumgaKeys.bindFunction(this.$scope, 'ctrl+enter', $.proxy(this.save, this));
+
+                                var aux = this.$location.path();
+                                if (aux == "/insert") {
+                                   this.$scope.checkboxEnable = true;
+                                } else {
+                                   this.$scope.checkboxEnable = false;
+                                }
+
 			},
 			updateDirtyStatus : function(isDirty) {
 				this.$state.current.confirmExit = isDirty;
@@ -48,7 +56,14 @@ define(['jquery', 'angular-class', './basic-crud-controller'], function($, Angul
 				this.afterSaveSuccess(response.data);
 			},
 			afterSaveSuccess: function(entity) {
-				this.$state.go('list');
+                          if (this.$scope.entity.continuarInserindo == true) {
+                                this.$scope.entity = new Object();
+                                this.$scope.entity.continuarInserindo = true;
+                          } else {
+                             this.$state.go('list');
+                          }
+
+			
 			},
 			saveError: function(response) {
 				if (response.status == 422)
