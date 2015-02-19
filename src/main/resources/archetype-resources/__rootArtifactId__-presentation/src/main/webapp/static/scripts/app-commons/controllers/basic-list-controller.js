@@ -47,7 +47,7 @@ define(['jquery', 'angular-class', './basic-crud-controller'], function($, Angul
 			},
 			
 			removeSelection: function() {
-				this.messages.confirm(this.i18n.remove.confirm, $.proxy(this.doRemove, this));
+				this.doRemove(true); //FALTA CONFIRMAR!!!!!
 			},
 			
 			doRemove : function(isConfirmed) {

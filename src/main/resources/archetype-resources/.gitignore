@@ -1,8 +1,10 @@
-*.class
-.DS_Store
-Servers/*
-.metadata
-.settings
-.classpath
-.project
-target/
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+
+/${artifactId}-api/target/
+/${artifactId}-aplication/target/
+/${artifactId}-domain/target/
+/${artifactId}-gateway/target/
+/${artifactId}-infrastructure/target/
+/${artifactId}-presentation/target/

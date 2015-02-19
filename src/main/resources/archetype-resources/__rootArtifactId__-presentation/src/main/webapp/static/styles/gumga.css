@@ -7,3 +7,13 @@
 .gumga-filter{
     display: inline-block;
 }
+
+.login-background {
+    background-color: #245269;
+}
+
+.img-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}

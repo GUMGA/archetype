@@ -41,7 +41,7 @@ define(function (require) {
                             "                        <li class=\"dropdown\">\n" +
                             "                            <a href=\"#\" dropdown-toggle>Você está logado como: <strong>Usuário</strong> <b class=\"caret\"></b></a>\n" +
                             "                            <ul class=\"dropdown-menu\">\n" +
-                            "                                <li><a href=\"security/logout\"><span class=\"glyphicon glyphicon-off\"></span> Sair</a></li>\n" +
+                            "                                <li><a href=\"http://localhost:8084/${rootArtifactId}/\"><span class=\"glyphicon glyphicon-off\"></span> Sair</a></li>\n" +
                             "                            </ul>\n" +
                             "                        </li>\n" +
                             "                    </ul>\n" +
