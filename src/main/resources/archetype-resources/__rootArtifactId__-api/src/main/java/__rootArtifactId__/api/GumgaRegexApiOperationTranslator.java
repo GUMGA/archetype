@@ -16,8 +16,11 @@ import org.springframework.stereotype.Component;
 public class GumgaRegexApiOperationTranslator implements ApiOperationTranslator {
 
     private final List<OperationExpression> operations = Arrays.asList(
-            new OperationExpression("INSERT_COISA", ".*/erp-api/api/coisa/.*", "PUT"),
-            new OperationExpression("READ_COISA", ".*/erp-api/api/coisa/.*", "GET")
+            new OperationExpression("CoisaCRUD", ".*coisa.*", "GET"),
+            new OperationExpression("CoisaCRUD", ".*coisa.*", "PUT"),
+            new OperationExpression("CoisaCRUD", ".*coisa.*", "POST"),
+            new OperationExpression("CoisaCRUD", ".*coisa.*", "DELETE")
+
     );
 
     public String getOperation(String url, String method) {
