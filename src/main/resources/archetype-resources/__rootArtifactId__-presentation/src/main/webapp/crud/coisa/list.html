@@ -42,6 +42,7 @@
 
         <div class=${symbol_escape}"col-xs-12${symbol_escape}">
             <gumga:table
+                on-sort="doSort($column, $direction)"
                 values="list.values"
                 class="table-condensed table-striped"
                 selectable="multiple"

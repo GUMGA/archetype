@@ -14,7 +14,7 @@ define(function (require) {
                             + "      <li>"
                             +"         <a href=\"/${rootArtifactId}/crud/coisa/base.html\" gumga-menu-id=\"coisa\">Coisa</a>"
                             +"       </li>\n"
-                            + "    </ul>"
+                            + "    </ul>  //FIM MENU"
                             + "  </gumga-menu>"
                             + "</div>"
                 }
