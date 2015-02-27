@@ -1,6 +1,3 @@
-/*
-  COMETARIO 2
-*/
 define([
     'angular',
     'gumga/services/growl',
@@ -70,16 +67,13 @@ define([
             (function ($q, $window, $timeout, GumgaGrowl) {
                 return {
                     'responseError': function (response) {
+                        console.log(response);
                         if (response.status == 404)
-                            GumgaGrowl.error("Serviço não encontrado!");
+                            GumgaGrowl.error("Service not found");
                         if (response.status == 401) {
-                            GumgaGrowl.error("Sessão expirada", "Redirecionando para o login..");
-                            ${symbol_dollar}.unblockUI();
-                            var lugar="http://localhost:8084/${rootArtifactId}";
-                            return $timeout(function () { $window.location.assign(lugar);
-                            }, 300);
+                            GumgaGrowl.error("Security Message", response.data);
+                            $.unblockUI();
                         }
-
                         return $q.reject(response);
                     }
                 };

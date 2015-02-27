@@ -1,4 +1,4 @@
-define(['gumga-class'], function (GumgaClass) {
+define(['gumga-class','app/locations'], function (GumgaClass,API) {
 
     function LoginService($http, $q, $rootScope) {
 
@@ -21,10 +21,10 @@ define(['gumga-class'], function (GumgaClass) {
                 }
             }
 
-            $http.get('http://localhost:8084/gumgasecurity-presentation/public/token/create/' + user.email + '/' + user.password)
+            $http.get(API.plocation +"/token/create/" + user.email + '/' + user.password)
                     .then(function (data) {
                         if (data.data.token == 0) {
-                            changeObj(false, 'Wrong User')
+                            changeObj(false, 'User not authorized')
                             d.reject(promiseObj);
                         } else {
                             window.sessionStorage.setItem('token', data.data.token);

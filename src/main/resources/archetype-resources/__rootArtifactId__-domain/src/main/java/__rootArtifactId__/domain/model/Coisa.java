@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,6 +20,7 @@ import org.hibernate.envers.Audited;
 @Audited
 @GumgaMultitenancy
 @Entity
+@SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_COISA")
 public class Coisa extends GumgaModel<Long> implements Serializable {
 
     @NotNull

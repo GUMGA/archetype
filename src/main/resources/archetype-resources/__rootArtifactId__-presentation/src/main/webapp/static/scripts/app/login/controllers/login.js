@@ -7,7 +7,7 @@ define(function (require) {
                 var lg = this;
 
                 var changeLocation = function () {
-                    window.location.assign('http://localhost:8084/${rootArtifactId}/crud/coisa/base.html#/');
+                    window.location.assign('http://'+window.location.host+'/${rootArtifactId}/crud/coisa/base.html#/');
                 }
 
                 lg.checkToken = function () {
