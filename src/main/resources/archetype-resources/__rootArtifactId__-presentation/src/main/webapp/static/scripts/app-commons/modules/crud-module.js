@@ -72,7 +72,8 @@ define([
                             GumgaGrowl.error("Service not found");
                         if (response.status == 401) {
                             GumgaGrowl.error("Security Message", response.data);
-                            $.unblockUI();
+                            $symbol_dollar
+                            .unblockUI();
                         }
                         return $q.reject(response);
                     }

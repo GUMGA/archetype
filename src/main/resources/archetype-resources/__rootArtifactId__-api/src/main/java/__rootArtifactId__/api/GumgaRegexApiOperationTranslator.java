@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class GumgaRegexApiOperationTranslator implements ApiOperationTranslator {
 
     private final List<OperationExpression> operations = Arrays.asList(
+            new OperationExpression("ALL_OPERATIONS", ".*", ".*"),
             new OperationExpression("CoisaCRUD", ".*coisa.*", "GET"),
             new OperationExpression("CoisaCRUD", ".*coisa.*", "PUT"),
             new OperationExpression("CoisaCRUD", ".*coisa.*", "POST"),

@@ -36,7 +36,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <warName>${artifactId}-api</warName>
+                    <warName>${artifactId}</warName>
                     <!-- Depois, ignorar todos os arquivos JavaScript e CSS pois eles serão copiados pelo requirejs-maven-plugin -->
                     <!-- <warSourceExcludes>**/*.js,**/*.css</warSourceExcludes> -->
                 </configuration>

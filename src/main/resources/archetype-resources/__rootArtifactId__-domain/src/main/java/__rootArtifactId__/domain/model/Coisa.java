@@ -16,18 +16,24 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.envers.Audited;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
 
+@Indexed
 @Audited
 @GumgaMultitenancy
 @Entity
 @SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_COISA")
 public class Coisa extends GumgaModel<Long> implements Serializable {
 
+    @Field
     @NotNull
     @NotEmpty
     @Size(min = 2)
     private String descricao;
+    @Field
     private BigDecimal valor;
+    @Field
     private boolean ativo;
 
     public Coisa() {
