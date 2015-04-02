@@ -1,0 +1,47 @@
+[
+  {
+    "label": "coisa",
+    "URL": "coisa.list",
+    "key": "CRUD-BASE",
+    "filhos": [
+      {
+        "label": "coisa1",
+        "URL": "coisa.list",
+        "key": "CRUD-BASE",
+        "filhos": []
+      },
+      {
+        "label": "coisa2",
+        "URL": "coisa.list",
+        "key": "CRUD-BASE",
+        "filhos": [
+          {
+            "label": "coisa2.1",
+            "URL": "coisa.list",
+            "key": "CRUD-BASE",
+            "filhos": []
+          },
+          {
+            "label": "coisa2.1",
+            "URL": "coisa.list",
+            "key": "CRUD-BASE",
+            "filhos": [
+              {
+                "label": "coisa2.1",
+                "URL": "coisa.list",
+                "key": "CRUD-",
+                "filhos": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Teste",
+    "URL": "coisa.list",
+    "key": "LOGIN",
+    "filhos": []
+  }
+]

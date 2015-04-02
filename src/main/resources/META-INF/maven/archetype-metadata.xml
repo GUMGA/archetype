@@ -78,53 +78,23 @@
     <module id="${rootArtifactId}-presentation" dir="__rootArtifactId__-presentation" name="${rootArtifactId}-presentation">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/main/resources</directory>
-          <includes>
-            <include>**/*.xml</include>
-            <include>**/*.properties</include>
-          </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
-            <include>**/*.txt</include>
-            <include>**/*.xml</include>
             <include>**/*.html</include>
-            <include>**/login.js</include>
-            <include>**/locations.js</include>
-            <include>**/directives.js</include>
-            <include>**/crud-module.js</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>src/main/scripts</directory>
-          <includes>
-            <include>**/*.js</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>src/main/config</directory>
-          <includes>
-            <include>**/*.js</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>src/main/resources</directory>
-          <includes>
-            <include>**/*.config</include>
+            <include>**/*.json</include>
+            <include>**/*.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
+            <include>**/.gitignore</include>
+            <include>**/*.styl</include>
             <include>**/*.png</include>
             <include>**/*.css</include>
             <include>**/*.gif</include>
             <include>**/*.svg</include>
-            <include>**/*.ttf</include>
             <include>**/*.js</include>
-            <include>**/*.eot</include>
-            <include>**/*.woff</include>
           </includes>
         </fileSet>
       </fileSets>

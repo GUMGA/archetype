@@ -1,0 +1,27 @@
+<form name="forms" novalidate>
+    <div class="col-md-12">
+
+        <input type="text" name="descricao" ng-model="form.entity.descricao" class="form-control" gumga-required gumga-min="3"/>
+        <gumga-errors name="descricao"></gumga-errors>
+
+        <label for="checkbox">
+            <input type="checkbox" ng-model="form.entity.ativo"/>
+            <strong>ATIVO</strong>
+        </label>
+        
+        
+        <!--<gumga-many-to-many left-list="form.list" right-list="form.list2">-->
+            <!--<left-list-field>{{item.name}} - {{item.age}}</left-list-field>-->
+            <!--<right-list-field>{{item.name}}</right-list-field>-->
+        <!--</gumga-many-to-many>-->
+
+        <!-- <gumga-address id="comercial" value="form.addressMock"></gumga-address> -->
+
+        <gumga-form-buttons
+                back="coisa.list"
+                submit="form.update(form.entity)"
+                position="right"
+                valid="forms.$valid"
+                ></gumga-form-buttons>
+    </div>
+</form>

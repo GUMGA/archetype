@@ -8,3 +8,4 @@
 /${artifactId}-gateway/target/
 /${artifactId}-infrastructure/target/
 /${artifactId}-presentation/target/
+/${artifactId}-presentation/src/main/webapp/bower_components/
