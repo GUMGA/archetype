@@ -68,6 +68,7 @@
             template: template.join('\n'),
             link: function (scope, elm, attrs, ctrl) {
                 scope.title = attrs.title || 'Endereço';
+		scope.value = scope.value || {};
                 scope.id = attrs.name || Math.floor(Math.random()*984984984);
                 scope['loader' + scope.id] = false;
 
