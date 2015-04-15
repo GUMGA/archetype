@@ -1,1 +1,0 @@
-define(["jquery"],function(e){return function(){this.listeners={},this.on=function(t,n){t=e.trim(t),t=t.replace(/(\s)+/g," ").split(" ");for(var r=0;r<t.length;r++){var i=t[r];this.listeners[i]||(this.listeners[i]=[]),this.listeners[i].push(n)}},this.trigger=function(e,t){var n=this.listeners[e];if(!n)return;for(var r=0;r<n.length;r++)n[r].apply(this,t)}}});

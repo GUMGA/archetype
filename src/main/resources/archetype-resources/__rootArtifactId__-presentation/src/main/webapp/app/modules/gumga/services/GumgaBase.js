@@ -5,6 +5,7 @@ define(['app/apiLocations'], function (APILocation) {
     function BaseService($http, $q, $timeout) {
         this.get = get;
         this.getById = getById;
+        this.getNew = getNew;
         this.deleteAll = deleteAll;
         this.save = save;
         this.update = update;
@@ -14,13 +15,16 @@ define(['app/apiLocations'], function (APILocation) {
             if (!params) {
                 params = defaultParams;
             }
-            var a = $http.get(url, params);
-            return a;
+            return $http.get(url, params);;
         }
 
         function getById(url,id) {
             return $http.get(url + '/' + id);
         }
+
+        function getNew(url){
+            return $http.get(url+'/new');
+        };
 
         function deleteAll(url,entities) {
             var promises = [];

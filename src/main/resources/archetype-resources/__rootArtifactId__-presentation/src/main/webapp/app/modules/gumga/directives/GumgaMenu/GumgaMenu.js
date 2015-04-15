@@ -18,13 +18,13 @@ define([], function () {
                 $http.get(attrs.menuUrl).then(function (data) {
                     scope.dados = data.data;
                 }, function (data) {
-                    console.log('Erro:', data);
+                    throw 'Erro:' + data;
                 });
 
                 $http.get(attrs.keysUrl).then(function (data) {
                     scope.keys = data.data;
                 }, function (data) {
-                    console.log('Erro:', data);
+                    throw 'Erro:' + data;
                 });
 
                 scope.$watchGroup(['dados', 'keys'], function () {

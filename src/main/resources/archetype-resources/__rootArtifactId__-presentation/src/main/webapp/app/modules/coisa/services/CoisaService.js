@@ -1,17 +1,17 @@
 define(['app/apiLocations'], function (APILocation) {
 
-    CoisaService.$inject = ['GumgaBase', '$stateParams'];
+    CoisaService.$inject = ['GumgaBase', '$stateParams','$state'];
 
-    function CoisaService(GumgaBase, $stateParams) {
-        var coisa = this;
-        coisa.url = APILocation.apiLocation + '/financeiro-api/api/coisa';
+    function CoisaService(GumgaBase, $stateParams,$state) {
+        
+        var url = APILocation.apiLocation + '/financeiro-api/api/coisa';
         var query = {};
         query.params = {
             start: 0,
             pageSize: 10
         };
 
-        coisa.get = function (page) {
+        this.get = function (page) {
             if ($stateParams.id) {
                 return GumgaBase.getById($stateParams.id);
             }
@@ -19,39 +19,40 @@ define(['app/apiLocations'], function (APILocation) {
                 query.params.start = (page - 1) * query.params.pageSize;
                 if (page < 1) throw 'Invalid page';
             }
-            return GumgaBase.get(coisa.url,query);
+            return GumgaBase.get(url,query);
         };
 
-        coisa.getSearch = function (field, param) {
+        this.getSearch = function (field, param) {
             if (!param) param = '';
             query.params = {};
             query.params.q = param;
             query.params.searchFields = field;
-            return GumgaBase.get(coisa.url,query);
+            return GumgaBase.get(url,query);
         };
 
-        coisa.doSort = function (field, way) {
+        this.doSort = function (field, way) {
             query.params.start = 0;
             query.params.sortField = field;
             query.params.sortDir = way;
-            return GumgaBase.get(coisa.url,query);
+            return GumgaBase.get(url,query);
         };
 
-        coisa.doRemove = function (entities) {
-            return GumgaBase.deleteAll(coisa.url,entities);
+        this.doRemove = function (entities) {
+            return GumgaBase.deleteAll(url,entities);
         };
 
-        coisa.update = function (entity) {
+        this.update = function (entity) {
             if (entity.id) {
-                return GumgaBase.update(coisa.url,entity);
+                GumgaBase.update(url,entity).success(function(){$state.go('coisa.list');});
             }
-            return GumgaBase.save(coisa.url,entity);
+            GumgaBase.save(url,entity).success(function(){$state.go('coisa.list');});
+            
         };
 
-        coisa.advancedSearch = function (param) {
+        this.advancedSearch = function (param) {
             query.params = {};
             query.params.aq = param;
-            return GumgaBase.get(coisa.url,query);
+            return GumgaBase.get(url,query);
         };
 
     }

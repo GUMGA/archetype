@@ -1,1 +1,0 @@
-define(["angular","jquery"],function(e,t){return e.module("gumga.components.offcanvas",[]).directive("gumgaOffcanvasReveal",function(){return{restrict:"AC",link:function(e,n){n.click(function(){t(".gumga-offcanvas").toggleClass("active")})}}})});

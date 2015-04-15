@@ -8,6 +8,7 @@ define(['jquery'], function ($) {
             scope.indexes = [];
             scope.trs = [];
             scope.$parent.deletedEntities = [];
+            scope.objectColumn = [];
             var rawTableConfig = {
                 multi: scope.multi,
                 list: [],
@@ -69,7 +70,11 @@ define(['jquery'], function ($) {
                                 case 'EXTRA-COLUMN':
                                     scope.extraElements = cloneEl.children;
                                     rawConfig.headings.push({label: ' ', way: null});
-
+                                    break;
+                                case 'OBJECT-COLUMN':
+                                    scope.objectColumn.push({column: cloneEl.getAttribute('column'),
+                                                          value: cloneEl.getAttribute('property')});
+                                    break
                             }
                         }
                     });
@@ -114,21 +119,28 @@ define(['jquery'], function ($) {
                 elm.append($compile(template.join('\n'))(scope));
 
             }
+            function checkObject(field){
+                for(var i = 0; i < scope.objectColumn.length;i++){
+                    if(scope.objectColumn[i].column === field){
+                        return '{{entity.'+  scope.objectColumn[i].value +'}}';
+                    }
+                }
+                return -1;
+            }
 
             function generateTableCell(config) {
                 var template = [];
                 config.columns.forEach(function (elm) {
                     if (elm.trueValue) {
                         template.push('<td style="text-align: center">{{entity.' + elm.field + ' === true? \'' + elm.trueValue + '\' : \'' + elm.falseValue + '\'}}</td>');
+                    } else if(checkObject(elm.field) != -1){
+                        template.push('<td>' + checkObject(elm.field) +' </td>');
                     } else {
-                        if (typeof elm.field == 'string') {
-                            template.push('<td style="text-align: left;">{{entity.' + elm.field + '}}</td>');
-                        } else if (typeof elm.field == 'number') {
-                            template.push('<td style="text-align: right;">{{entity.' + elm.field + '}}</td>');
-                        }
+                        template.push('<td>{{entity.'+ elm.field + '}} </td>');
                     }
                 });
 
+                        
                 if (scope.buttonElements) {
                     template.push('<td>' + getSpecial(scope.buttonElements) + '</td>');
                 }

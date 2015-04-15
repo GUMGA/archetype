@@ -1,8 +1,5 @@
-/**
- * Created by igorsantana on 30/03/15.
- */
 define([],function(){
     return {
-        apiLocation: 'http://www.gumga.com.br'
+        apiLocation: 'http://127.0.0.1:8084'
     }
 })

@@ -9,10 +9,11 @@
   padding-left 0
   padding-right 0
   height 100%
+  overflow auto
 
 #btn-menu
   display none
-  z-index 11112
+  z-index 10000
   position fixed
   margin-top 8px
   color #000000
@@ -63,24 +64,28 @@
 
 
 .open-menu
-  display block !important
-  z-index 1111
+  opacity 1 !important
+  transition(opacity, 0.3s, linear)  
 
 @media screen and (max-width: 1000px)
   li > a
     font-size 10px
 
-  @media screen and (max-width: 600px)
-    #menu
-      display none
-      z-index 101
+@media screen and (max-width: 600px)
+  #menu
+    transition(opacity, 0.3s, linear)  
+    opacity 0
+    z-index 1000
+    width 30%
+    opacity 0;
 
-    .img-centered
-      display none
+  .img-centered
+    display none
 
-    #menu
-      > ul
-        margin-top 15px
+  #menu
+    > ul
+      margin-top 15px
 
-    #btn-menu
-      display block
+  #btn-menu
+    display block
+
