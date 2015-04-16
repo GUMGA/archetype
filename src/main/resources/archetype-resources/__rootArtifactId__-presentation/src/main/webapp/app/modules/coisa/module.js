@@ -13,15 +13,26 @@ define(function (require) {
             url: '/list',
             templateUrl: 'app/modules/coisa/views/list.html',
             controller: 'CoisaListController',
+            resolve: {
+                        translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                            $translatePartialLoader.addPart('coisa');
+                            return $translate.refresh();
+                        }]
+            }
         })
         .state('coisa.insert', {
             url: '/insert',
             templateUrl: 'app/modules/coisa/views/form.html',
             controller: 'CoisaFormController',
             resolve: {
-                entity: function () {
-                    return {};
-                }
+                        entity: ['$stateParams', '$http', function ($stateParams, $http) {
+                            var url = APILocation.apiLocation + '/api/coisa/new'
+                            return $http.get(url);
+                        }]
+                        ,translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                            $translatePartialLoader.addPart('coisa');
+                            return $translate.refresh();
+                        }]
             }
         })
         .state('coisa.edit', {
@@ -30,7 +41,11 @@ define(function (require) {
             controller: 'CoisaFormController',
             resolve: {
                 entity: ['$stateParams', '$http', function ($stateParams, $http) {
-                    return $http.get(APILocation.apiLocation + '/financeiro-api/api/coisa/' + $stateParams.id);
+                    return $http.get(APILocation.apiLocation + '/api/coisa/' + $stateParams.id);
+                }]
+                ,translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                            $translatePartialLoader.addPart('coisa');
+                            return $translate.refresh();
                 }]
             }
         });

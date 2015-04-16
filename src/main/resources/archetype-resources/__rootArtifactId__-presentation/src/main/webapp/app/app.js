@@ -1,6 +1,14 @@
 define(function (require) {
     require('angular');
     require('angular-ui-router');
+
+    require('angular-cookies');
+    require('angular-dynamic-locale');
+    require('angular-translate');
+    require('angular-translate-loader-partial');
+    require('angular-translate-storage-cookie');
+    require('app/modules/language/module');
+
     require('app/modules/coisa/module');
     require('app/modules/login/module');
     //FIMREQUIRE
@@ -10,9 +18,22 @@ define(function (require) {
         'ui.router'
         , 'app.coisa'
         , 'app.login'
+        , 'ngCookies' , 'app.language'
         //FIMINJECTIONS
         ])
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $injector) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $injector,$translateProvider, tmhDynamicLocaleProvider) {
+
+
+         // Initialize angular-translate
+         $translateProvider.useLoader('$translatePartialLoader', {
+          urlTemplate: 'i18n/{lang}/{part}.json'
+        });
+
+        $translateProvider.preferredLanguage('pt-br');
+        $translateProvider.useCookieStorage();
+
+        tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
 
         $urlRouterProvider.otherwise('login');
         $stateProvider
@@ -64,7 +85,14 @@ define(function (require) {
             };
         })
 })
-.run(function ($templateCache) {
+.run(function ($rootScope, $templateCache, Language, $translate) {
     $templateCache.put('modalTemplate.html');
+        $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
+        // Update the language
+        Language.getCurrent().then(function (language) {
+            $translate.use(language);
+        });
+    });
+
 })
 });

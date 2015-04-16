@@ -4,13 +4,21 @@ requirejs.config({
         "angular-mocks": "node_modules/angular-mocks/angular-mocks",
         "angular-ui-bootstrap": "bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min",
         "angular-ui-router": "bower_components/angular-ui-router/release/angular-ui-router.min",
-        "angular-translate": "bower_components/angular-translate/angular-translate",
         "bootstrap": "bower_components/dist/bootstrap.min",
         "jquery": "bower_components/jquery/dist/jquery.min",
         "es5-sshim": "bower_components/es5-shim/es5-shim.min",
         "gumga-core": "app/modules/gumga/module",
         'jquery-mask': "bower_components/jQuery-Mask-Plugin/dist/jquery.mask.min",
-        'notify': "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min"
+        'notify': "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min",
+        'angular-ui-tree': "bower_components/angular-ui-tree/dist/angular-ui-tree.min",
+        'angular-input-masks': "bower_components/angular-input-masks/angular-input-masks.min",
+        'angular-br-filters': "bower_components/angular-br-filters/release/angular-br-filters.min",
+        "angular-cookies": "bower_components/angular-cookies/angular-cookies.min",
+        "angular-local-storage": "bower_components/angular-local-storage/dist/angular-local-storage",
+        "angular-dynamic-locale": "bower_components/angular-dynamic-locale/dist/tmhDynamicLocale",
+        "angular-translate": "bower_components/angular-translate/angular-translate.min",
+        "angular-translate-loader-partial": "bower_components/angular-translate-loader-partial/angular-translate-loader-partial.min",
+        "angular-translate-storage-cookie": "bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min"
     },
     shim: {
         "angular": {exports: "angular", deps: ["jquery"]},
@@ -19,7 +27,15 @@ requirejs.config({
         "angular-mocks": {deps: ["angular"], exports: "angular-mocks"},
         "bootstrap": {deps: ["jquery"]},
         "jquery-mask": {deps: ["jquery"]},
-        "notify": {deps: ["jquery"]}
-
+        "notify": {deps: ["jquery"]},
+        "angular-ui-tree": {deps: ["angular"]},
+        "angular-input-masks": {deps: ["angular"]},
+        "angular-br-filters": {deps: ["angular"]},
+        "angular-cookies": {deps: ["angular"]},
+        "angular-local-storage": {deps: ["angular"]},
+        "angular-dynamic-locale": {deps: ["angular"]},
+        "angular-translate": {deps: ["angular"]},
+        "angular-translate-loader-partial": {deps: ["angular-translate"]},
+        "angular-translate-storage-cookie": {deps: ["angular-translate"]}
     }
 });

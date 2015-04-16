@@ -83,6 +83,7 @@
             <include>**/*.html</include>
             <include>**/*.json</include>
             <include>**/*.xml</include>
+            <include>**/apiLocations.js</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">

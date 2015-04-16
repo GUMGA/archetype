@@ -19,10 +19,7 @@
                 if (!scope.leftList || !scope.rightList) {
                     throw 'You\'ve got to provide to the directive two lists';
                 }
-
-
                 scope.$watch('leftList', function(){
-                    console.log("obj")
                     scope.rightList.forEach(function(objRight){
                         scope.leftList.forEach(function(objLeft){
                             if(objRight.id == objLeft.id){

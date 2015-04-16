@@ -21,7 +21,7 @@ define(['app/apiLocations'], function (APILocation) {
                     message: msg
                 };
             };
-            $http.get(APILocation.apiLocation + '/financeiro-api/public/token/create/' + user.email + '/' + user.password)
+            $http.get(APILocation.apiLocation + '/public/token/create/' + user.email + '/' + user.password)
                 .then(function (data) {
                     if (data.data.response) {
                         changeObj(false, data.data.response);

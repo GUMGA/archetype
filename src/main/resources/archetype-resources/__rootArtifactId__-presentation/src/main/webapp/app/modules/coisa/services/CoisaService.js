@@ -4,7 +4,7 @@ define(['app/apiLocations'], function (APILocation) {
 
     function CoisaService(GumgaBase, $stateParams,$state) {
         
-        var url = APILocation.apiLocation + '/financeiro-api/api/coisa';
+        var url = APILocation.apiLocation + '/api/coisa';
         var query = {};
         query.params = {
             start: 0,

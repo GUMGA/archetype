@@ -7,6 +7,7 @@ define(['jquery'], function ($) {
         function LinkFn(scope, elm, attrs, ctrl, transcludeFn) {
             scope.indexes = [];
             scope.trs = [];
+            scope.name = attrs.name;
             scope.$parent.deletedEntities = [];
             scope.objectColumn = [];
             var rawTableConfig = {
@@ -41,7 +42,7 @@ define(['jquery'], function ($) {
             function setColumnConfig(rawConfig) {
                 rawConfig.columns.forEach(function (elm) {
                     var obj = {
-                        label: GumgaUtils.camelCase(elm),
+                        label: elm,
                         field: elm
                     };
                     rawConfig.headings.push({label: obj.label, way: null});
@@ -100,7 +101,7 @@ define(['jquery'], function ($) {
                 template.push('<tr>');
                 if (attrs.sortFunction) {
                     template.push(' <td  ng-repeat="head in tableconfig.headings track by $index" ng-click="head.label !== \' \' ? sortAux(head) : \'\'"');
-                    template.push('     ng-class="head.label != \' \' ? \'clickable-td\' : \' \' ">');
+                    template.push('     ng-class="head.label != \' \' ? \'clickable-td\' : \' \' "  translate="{{head.label == \' \' ? \' \' :  name +\'.\'+ head.label}}">');
                     template.push('         {{head.label}}<i ng-class="(head.way !== null && head.label !== \' \') ? (head.way === true ? \' fa fa-caret-up\' : \'fa fa-caret-down\') : \'\'"></i>');
                 } else {
                     template.push('<td ng-repeat="head in tableconfig.headings track by $index">{{head.label}}');

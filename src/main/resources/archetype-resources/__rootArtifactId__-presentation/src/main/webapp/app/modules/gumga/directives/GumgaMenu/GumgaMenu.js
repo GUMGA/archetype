@@ -59,10 +59,10 @@ define([], function () {
                     }
                     var template = ['<li class="' + type + '-option">']
                     if (param.filhos.length > 0 && verificarPermicaoFilho(param.filhos)) {
-                        template.push('<a ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'" ng-click="resetarMenu(' + count + ')">')
+                        template.push('<a ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'" ng-click="resetarMenu(' + count + ')"   translate="'+param.label.toLowerCase()+'.menuLabel">')
                         template.push('<i  ng-class="v[' + count + '].isActive ? \' fa-chevron-down \' : \'fa-chevron-right\'" class="fa ' + type + '-color"></i>')
                     } else {
-                        template.push('<a ui-sref="' + param.URL + '" ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'" ng-click="resetarMenu(' + count + ')">')
+                        template.push('<a ui-sref="' + param.URL + '" ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'" ng-click="resetarMenu(' + count + ')" translate="'+param.label.toLowerCase()+'.menuLabel">')
                         template.push('<i  class="fa fa-minus ' + type + '-color"></i>')
                     }
                     template.push(param.label)
