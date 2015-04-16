@@ -99,7 +99,7 @@
 
                 scope.searchCep = function (cep) {
                     scope['loader' + scope.id] = true;
-                    $http.get(APILocation.apiLocation + '/services-api/public/cep/' + cep)
+                    $http.get('http://www.gumga.com.br/services-api/public/cep/' + cep)
                     .success(function (values) {
                         scope['loader' + scope.id] = false;
                         if (parseInt(values.resultado) == 1) {
