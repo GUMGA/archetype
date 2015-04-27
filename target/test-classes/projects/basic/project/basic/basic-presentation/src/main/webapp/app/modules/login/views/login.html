@@ -1,0 +1,18 @@
+<div class="login-background" ng-controller="LoginController">
+        <div class="well col-md-4 col-md-offset-4" style="margin-top: 12%">
+                <form name="loginForm" ng-submit="doLogin(user)" novalidate>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="emailInput" name="emailInput" type="email" class="form-control" ng-model="user.email" required/>
+                        <p class="text-danger" ng-show="emailInvalid">You must enter a valid email</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" ng-model="user.password" required>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">Login</button>
+                    </div>
+                </form>
+        </div>
+</div>
