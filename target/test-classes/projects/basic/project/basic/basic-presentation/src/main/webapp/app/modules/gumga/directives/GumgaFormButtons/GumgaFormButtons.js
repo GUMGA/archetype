@@ -13,16 +13,13 @@
                 valid: '=',
                 continue: '='
             },
-            template: 
-                    '<div class="col-md-12">'+
-            '<div ng-class="getPosition()">' +
+            template: '<div ng-class="getPosition()">' +
             '<label id="continuarInserindo" ng-if="inNew">'+
             '<input type="checkbox" name="continuar" ng-model="continue.insert"/>'+
-            'Continuar inserindo'+
+            '<span gumga-translate-tag="formbuttons.inserir"></span>'+
             '</label>' +
             '<button class="btn btn-warning" style="margin-right: 0.8em" ng-click="back()" type="button"><i class="fa fa-history"></i> Back</button>' +
             '<button class="btn btn-primary" style="margin-right: 0.8em" ng-click="do()" ng-disabled="!valid" type="button"><i class="fa fa-floppy-o"></i> Save</button>' +
-            '</div>'+
             '</div>',
             require: '^form',
             link: function (scope, elm, attrs, ctrl) {

@@ -18,6 +18,9 @@ define([], function () {
             $rootScope.$broadcast('gumgaError', obj);
         }
 
+        function emitTranslate(obj){
+            $rootScope.$broadcast('gumgaTranslateEntity');
+        }
     }
 
     return GumgaBroadcaster;

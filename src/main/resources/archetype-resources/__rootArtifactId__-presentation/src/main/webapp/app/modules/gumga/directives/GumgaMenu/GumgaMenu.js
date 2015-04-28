@@ -42,7 +42,8 @@ define([], function () {
                     template.push('<img ng-src="'+ attrs.image +'" alt="logo" width="40%" class="img-centered">')
                     for (var i = 0; i < scope.dados.length; i++) {
                         if (keyIsValid(scope.dados[i].key)) {
-                            template.push(gerarNavPill(scope.dados[i], 'menu', -1));
+
+                            template.push(gerarNavPill(scope.dados[i], 'menu', {count:-1, label:null}));
                         }
                     }
                     template.push('</ul>')
@@ -55,24 +56,35 @@ define([], function () {
                 var gerarNavPill = function (param, type, parent) {
                     scope.v[count] = {
                         isActive: false,
-                        parent: parent
-                    }
+                        parent: parent.count
+                    };
                     var template = ['<li class="' + type + '-option">']
                     if (param.filhos.length > 0 && verificarPermicaoFilho(param.filhos)) {
-                        template.push('<i  ng-class="v[' + count + '].isActive ? \' glyphicon glyphicon-chevron-down \' : \'glyphicon glyphicon-chevron-right\'" class="fa ' + type + '-color"  ng-click="resetarMenu(' + count + ')"></i>')
+                        template.push('<i  ng-class="v[' + count + '].isActive ? \' fa-chevron-down \' : \'fa-chevron-right\'" class="fa ' + type + '-color"  ng-click="resetarMenu(' + count + ')"></i>')
                     } else {
-                        template.push('<i  class="glyphicon glyphicon-minus ' + type + '-color"  ng-click="resetarMenu(' + count + ')"></i>')
+                        template.push('<i  class="fa fa-minus ' + type + '-color"  ng-click="resetarMenu(' + count + ')"></i>')
                     }
-                    template.push('<a ui-sref="' + param.URL + '" ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'">')
+                    template.push('<a ui-sref="' + param.URL + '" ng-class="v[' + count + '].isActive ? \'is-active\' : \' \'"')
+                    if(parent.label == null || param.filhos.length > 0){
+                        template.push('gumga-translate-tag="'+ param.label +'.menuLabel">')
+
+                    }else if(param.filhos.length == 0){
+                        template.push('gumga-translate-tag="'+ parent.label +'.'+ param.label +'">')
+                    }
+
+
+
+
                     template.push(param.label)
                     template.push('</a>')
                     var aux = count;
+
                     count++;
                     if (param.filhos.length > 0) {
                         template.push('<ul ng-class="v[' + (count - 1) + '].isActive ? \' submenu-group-ativo\' : \'submenu-group\'" class="menu-holder">')
                         for (var i = 0; i < param.filhos.length; i++) {
                             if (keyIsValid(param.filhos[i].key)) {
-                                template.push(gerarNavPill(param.filhos[i], 'submenu', aux))
+                                template.push(gerarNavPill(param.filhos[i], 'submenu', {count:aux,label:param.label}))
                             }
                         }
                         template.push('</ul>')

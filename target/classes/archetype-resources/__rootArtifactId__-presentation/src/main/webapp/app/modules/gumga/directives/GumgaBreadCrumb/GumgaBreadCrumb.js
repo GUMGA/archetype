@@ -8,7 +8,7 @@ define([],function(){
     function GumgaBreadCrumb(GumgaUtils,$timeout,$rootScope){
         var template = [
             '<ol class="breadcrumb">',
-            '<li ng-repeat="bread in breadcrumbs"><a ui-sref="{{bread.state}}">{{bread.state}}</a></li>',
+            '<li ng-repeat="bread in breadcrumbs" ><a ui-sref="{{bread.state}}">{{bread.state}}</a></li>',
             '</ol>'
         ];
         return {

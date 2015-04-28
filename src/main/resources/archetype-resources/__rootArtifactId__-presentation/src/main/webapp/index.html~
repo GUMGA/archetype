@@ -21,7 +21,7 @@
     <div class="loading">
         
     </div>
-<div ui-view gumga-translate>
+<div ui-view>
 
 </div>
 
@@ -33,6 +33,10 @@
     requirejs(['angular', 'app/app'], function (angular) {
         angular.bootstrap(document, ['app.core']);
     });
+</script>
+
+    </form>
+
 </script>
 <script type="text/ng-template" id="multiEntity.html">
     <gumga-nav></gumga-nav>

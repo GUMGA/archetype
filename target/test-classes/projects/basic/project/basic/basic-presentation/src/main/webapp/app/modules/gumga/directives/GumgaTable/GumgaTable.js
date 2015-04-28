@@ -16,7 +16,8 @@ define(['jquery'], function ($) {
                 size: attrs.size,
                 class: attrs.tableClass,
                 columns: attrs.columns,
-                headings: []
+                headings: [],
+                translate: attrs.translateEntity
             };
 
             scope.$watch('list', function () {
@@ -99,11 +100,11 @@ define(['jquery'], function ($) {
                 template.push('<thead>');
                 template.push('<tr>');
                 if (attrs.sortFunction) {
-                    template.push(' <td  ng-repeat="head in tableconfig.headings track by $index" ng-click="head.label !== \' \' ? sortAux(head) : \'\'"');
+                    template.push(' <td gumga-translate-tag="'+config.translate +'.{{head.label.toLowerCase()}}" ng-repeat="head in tableconfig.headings track by $index" ng-click="head.label !== \' \' ? sortAux(head) : \'\'"');
                     template.push('     ng-class="head.label != \' \' ? \'clickable-td\' : \' \' ">');
                     template.push('         {{head.label}}<i ng-class="(head.way !== null && head.label !== \' \') ? (head.way === true ? \' fa fa-caret-up\' : \'fa fa-caret-down\') : \'\'"></i>');
                 } else {
-                    template.push('<td ng-repeat="head in tableconfig.headings track by $index">{{head.label}}');
+                    template.push('<td gumga-translate-tag="head.label !== '+config.translate +'.{{head.label.toLowerCase()}}" ng-repeat="head in tableconfig.headings track by $index">{{head.label}}');
                 }
                 template.push(' </td>');
                 template.push('</tr>');

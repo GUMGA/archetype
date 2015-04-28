@@ -27,6 +27,7 @@ define(['jquery'],function($){
                 children: '=',
                 templateUrl: '@',
                 property: '@displayableProperty',
+                name: '@',
                 controller: '@'
             },
             link: function (scope,elm,attrs) {
@@ -34,6 +35,7 @@ define(['jquery'],function($){
                 scope.newModal = newModal;
                 scope.removeFromList = removeFromList;
                 scope.getFromModal = getFromModal;
+                var name = attrs.name || 'New';
                 if(!scope.children) throw 'You must provide a list to GumgaOneToMany';
                 if(!scope.templateUrl) throw 'You must provide a templateUrl for the modal';
                 if(!scope.property) throw 'You must provide a property to display in GumgaOneToMany';
@@ -53,8 +55,10 @@ define(['jquery'],function($){
 
                 function newModal(obj){
                     scope.etty = {};
+                    var title = attrs.name || "New";
                     if(obj){
                         scope.etty= obj;
+                        (title.toUpperCase == "new".toUpperCase ? (title = title) : title = 'Edit');
                     }
 
                     var modalInstance = $modal.open({
@@ -63,6 +67,9 @@ define(['jquery'],function($){
                         resolve: {
                             entity: function(){
                                 return scope.etty;
+                            },
+                            title: function(){
+                                return title;
                             }
                         }
                     });
