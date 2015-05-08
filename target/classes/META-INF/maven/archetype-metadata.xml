@@ -96,6 +96,9 @@
             <include>**/*.gif</include>
             <include>**/*.svg</include>
             <include>**/*.js</include>
+            <include>**/*.ttf</include>
+            <include>**/*.woff</include>
+            <include>**/*.woff2</include>
           </includes>
         </fileSet>
       </fileSets>

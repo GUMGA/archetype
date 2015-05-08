@@ -1,78 +1,102 @@
-var gulp = require('gulp')
-    , stylus = require('gulp-stylus')
-    , minifyCSS = require('gulp-minify-css')
-    , rename = require('gulp-rename')
-    , jshint = require('gulp-jshint')
-    , notify = require('gulp-notify')
-    , plumber = require('gulp-plumber')
-    , uglify = require('gulp-uglify')
-    , del = require('del')
-    , run = require('run-sequence')
-    ;
-var paths = {
-    dist: {
-        styles: 'dist/',
-        javascript: 'dist/gumga/',
-        images: 'dist/images'
-    },
-    dev: {
-        javascript: 'app/modules/',
-        stylus: 'resources/styles/',
-        images: 'resources/images/'
-    },
-    images: {
-        imgSrc: 'resources/images',
-        imgDst: 'resources/images'
-    }
+var gulp = require('gulp'),
+    stylus = require('gulp-stylus'),
+    minify = require('gulp-minify-css'),
+    concat = require('gulp-concat'),
+    jshint = require('gulp-jshint'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    plato = require('gulp-plato'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+    karma = require('karma').server,
+    uglify = require('gulp-uglify');
+
+// ------------ variáveis para facilitar o caminho dos arquivos
+
+var distPaths = {
+    css: './resources/styles/css/',
+    js: './app'
 };
 
-var onError = function (err) {
-    console.log(err);
+var sourcePaths = {
+    stylus: './resources/styles/stylus',
+    js: distPaths.js
 };
 
+// ------------ tarefas de css/stylus
 
-gulp.task('css', function () {
-    return gulp.src([paths.dev.stylus + '**/*.styl', '!' + paths.dev.stylus + 'gumga/**'])
-        .pipe(plumber({
-            errorHandler: onError
-        }))
+gulp.task('compileStylusIntoCss',function(){
+    return gulp.src(sourcePaths.stylus + '/gumga.styl')
         .pipe(stylus())
-        .pipe(gulp.dest(paths.dist.styles))
-        .pipe(minifyCSS())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(paths.dist.styles));
+        .pipe(concat('gumga.min.css'))
+        .pipe(minify())
+        .pipe(gulp.dest(distPaths.css))
+        .pipe(reload({stream: true}))
 });
 
-gulp.task('javascript', function () {
-    return gulp.src(['app/modules/gumga/**/*.js', '!app/modules/gumga/module.js'])
+// ------------ tarefas de javascript
+
+gulp.task('lintTheCode',function(file){
+    return gulp.src(sourcePaths.js + '/modules/gumga/**/*.js')
+        .pipe(jshint({"laxcomma":false}))
+        .pipe(jshint.reporter('default',{verbose: true}))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('uglify',function(){
+    return gulp.src(sourcePaths.js + '/modules/gumga/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('app/modules/gumga'))
+        .pipe(gulp.dest(sourcePaths.js + '/modules/gumga'))
 });
 
-gulp.task('jshint', function () {
-    return gulp.src([paths.dev.javascript + '**/*.js', '!app/modules/gumga/**/*.js'])
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        .pipe(notify({message: 'JS Hinting task complete'}));
+// Não funciona em 100% dos casos.
+gulp.task('ngAnnotate',function(){
+    return gulp.src(sourcePaths.js + '/modules/gumga/gumga.bundle.js')
+        .pipe(ngAnnotate())
+        .pipe(gulp.dest(sourcePaths.js + '/modules/gumga'))
+        .pipe(reload({stream: true}));
+});
+//Moderniza seu código para HTML5
+gulp.task('modernizr',function(){
+    return gulp.src(sourcePaths.js + '/**/*.js')
+        .pipe(modernizr())
+        .pipe(reload({stream: true}));
+});
+// Gera relatórios sobre seu código
+gulp.task('report', function () {
+    return gulp.src('app/**/*.js')
+        .pipe(plato('report', {
+            jshint: {
+                options: {
+                    strict: true
+                }
+            },
+            complexity: {
+                trycatch: true
+            }
+        }));
+});
+// ------------ Cria o servidor de teste
+
+gulp.task('karmaTest',function(done){
+    karma.start({
+        configFile: __dirname + '/karma.conf.js'
+    },done)
 });
 
-gulp.task('clean', function (cb) {
-    del(['dist/gumga.css'], cb);
+
+// ------------ Cria o servidor com autoReload
+
+gulp.task('server',['compileStylusIntoCss','lintTheCode'],function(){
+    browserSync.init({
+        server: {
+            baseDir: './'
+        }
+    });
+    gulp.watch(sourcePaths.stylus + '/**/*.styl',['compileStylusIntoCss']);
+    gulp.watch(sourcePaths.js + '/modules/**/*.js',['lintTheCode']);
+    gulp.watch('./**/*.html').on('change',reload);
 });
 
-gulp.task('watchers', function () {
-    gulp.watch(paths.dev.stylus + '**/*.styl', ['run']);
-    gulp.watch(paths.dev.javascript + '**/*.js', ['jshint']);
-});
-
-gulp.task('run', function () {
-    run('css', 'clean');
-});
 
 
-gulp.task('default', ['run', 'jshint', 'watchers']);
+gulp.task('default',['server']);

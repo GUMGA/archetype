@@ -1,39 +1,24 @@
-define(
-    [
-        'angular',
-        'jquery',
-        'app/modules/login/services/LoginService',
-        'angular-ui-router'
-    ],
-    function (angular, $) {
 
+define(['jquery'],
+    function ($) {
+        'use strict';
         LoginController.$inject = ['$scope', 'LoginService'];
 
         function LoginController($scope, LoginService) {
             $('#emailInput').focus();
+
             $scope.checkToken = function () {
-                if (LoginService.checkToken()) {
-                    LoginService.removeToken();
-                }
+                LoginService.removeToken();
             };
 
             $scope.doLogin = function (user) {
-                var tokenSvc = LoginService.setToken(user);
-                tokenSvc.then(function () {
-                }, function (err) {
-                    var msg;
-                    if(err.message == "NO_USER"){
-                        msg = "Invalid user."
-                    } else {
-                        msg = "Wrong password."
-                    }
-                    window.alert(msg);
-                })
+                LoginService.setToken(user)
             };
 
-            $scope.checkToken();
-        }
 
-        return angular.module('app.login.controllers', ['app.login.services', 'ui.router'])
-            .controller('LoginController', LoginController);
+            $scope.checkToken();
+
+        }
+        return LoginController;
+
     });

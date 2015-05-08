@@ -1,9 +1,8 @@
 [
-  {
-    "label": "coisa",
-    "URL": "coisa.list",
-    "key": "CRUD-BASE",
-    "filhos": [
-    ]
-  }
+{
+  "label": "welcome",
+  "URL": "welcome",
+  "key": "WELCOME",
+  "filhos": []
+}
 ]

@@ -1,10 +1,12 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-
-
-define([],function(){
+/**
+ * Created by igorsantana on 30/03/15.
+ */
+define(function () {
+    'use strict';
     return {
-        apiLocation: 'http://127.0.0.1:8084/${parentArtifactId}-api'
-    }
-})
+        apiLocation: location.origin+"/${parentArtifactId}-api/"
+    };
+});

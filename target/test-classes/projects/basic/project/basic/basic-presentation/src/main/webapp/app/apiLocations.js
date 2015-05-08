@@ -1,7 +1,9 @@
-
-
-define([],function(){
+/**
+ * Created by igorsantana on 30/03/15.
+ */
+define(function () {
+    'use strict';
     return {
-        apiLocation: 'http://127.0.0.1:8084/basic-api'
-    }
-})
+        apiLocation: location.origin+"/basic-api/"
+    };
+});
