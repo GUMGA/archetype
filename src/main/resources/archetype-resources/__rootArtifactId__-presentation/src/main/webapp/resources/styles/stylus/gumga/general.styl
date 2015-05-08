@@ -10,6 +10,7 @@ body
   padding-right 0.5em
   padding-top: navbarHeight + 10px
   width 100% - 15%
+  overflow auto
 
 .table
   border 1px solid #bdc3c7
@@ -34,7 +35,9 @@ body
     cursor pointer
     background-color rgba(157, 222, 250, 0.1)
 
-
+.list-group-z
+    @extend .list-group
+    z-index 99999
 
 .list-group-item
   position relative

@@ -1063,7 +1063,7 @@ define(function (require) {
             template +='<span class="input-group-btn">';
             template +='<button class=" btn btn-default" ng-click="open = !open" type="button"><span class="caret"></span></button>';
             template +='</div>';
-            template +='<ul class="list-group" ng-if="open">';
+            template +='<ul class="list-group-z" ng-if="open">';
             template +='<li class="list-group-item" ng-click="selectObj(choice);" ng-repeat="choice in list">';
             template +='<span>{{choice[field]}}</span>';
             template +='</li>';
