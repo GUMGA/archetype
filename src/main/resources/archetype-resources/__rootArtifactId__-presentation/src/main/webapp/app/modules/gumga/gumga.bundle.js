@@ -1263,7 +1263,7 @@ define(function (require) {
             multi.search = SearchPromise.data;
         }])
         .config(["$stateProvider", "$httpProvider", function ($stateProvider, $httpProvider) {
-            var template = ['multiEntity.html',
+            var template = [
                 '<gumga-nav></gumga-nav>',
                 '<gumga-menu menu-url="gumga-menu.json" keys-url="keys.json"></gumga-menu>',
                 '<div class="gumga-container">',
@@ -1275,6 +1275,9 @@ define(function (require) {
                     template: template.join('\n'),
                     controller: 'MultiEntityController',
                     controllerAs: 'multi',
+                    data: {
+                        id: 2
+                    },
                     resolve: {
                         SearchPromise: ['$stateParams', '$http', function ($stateParams, $http) {
                             var url = APILocations.apiLocation + 'public/multisearch/search/';
