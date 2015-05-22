@@ -1,15 +1,16 @@
-
-define(['api-locations'], function (APILocation) {
+define(['app/apiLocations'], function (APILocation) {
     'use strict';
     LoginService.$inject = ['$http', '$q', '$rootScope', '$state','GumgaWebStorage'];
 
     function LoginService($http, $q, $rootScope, $state,GumgaWebStorage) {
+
         this.checkToken = function () {
             return GumgaWebStorage.getSessionStorageItem('token');
         };
+
         this.removeToken = function (user) {
-            GumgaWebStorage.getSessionStorageItem('token');
             GumgaWebStorage.removeSessionStorageItem('token');
+            GumgaWebStorage.removeSessionStorageItem('user');
         };
 
         this.setToken = function (user) {
@@ -35,6 +36,7 @@ define(['api-locations'], function (APILocation) {
                             token: data.data.token,
                             organization: data.data.organization
                         };
+                        GumgaWebStorage.setSessionStorageItem('user',$rootScope.loggedUser);
                         GumgaWebStorage.setSessionStorageItem('token',data.data.token);
                         $state.go('welcome');
                         d.resolve();

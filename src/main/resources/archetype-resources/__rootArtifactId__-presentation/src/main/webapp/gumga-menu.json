@@ -1,8 +1,9 @@
 [
 {
-  "label": "welcome",
+  "label": "Home",
   "URL": "welcome",
-  "key": "WELCOME",
+  "key": "CRUD-BASE",
+  "icon": "glyphicon glyphicon-home",
   "filhos": []
 }
 ]

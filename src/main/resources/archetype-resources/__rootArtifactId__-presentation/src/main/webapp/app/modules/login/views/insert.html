@@ -11,14 +11,12 @@
                 <input type="password" class="form-control" ng-model="user.password" required>
             </div>
             <div class="text-right">
-                <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">Login</button>
+                <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">Cadastro</button>
             </div>
         </div>
-        <span class="col-md-4 col-md-offset-4">
-            <a ui-sref="login.insert">
-                <small><strong>Cadastro de usuário</strong></small>
-            </a>
-            <a ui-sref="login.forgot" class="pull-right"><small><strong>Esqueceu sua senha?</strong></small></a>
+        <span class="col-md-4 col-md-offset-4" style="margin-top: 0.25%;">
+            <a ui-sref="login.log"><span class="glyphicon glyphicon-chevron-left"></span>
+                <small><strong>Login </strong></small></a>
         </span>
     </div>
 </form>

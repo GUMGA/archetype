@@ -1,3 +1,4 @@
+@import "../../../../bower_components/bootstrap-stylus/bootstrap/index"
 
 body
   font-family fonts
@@ -10,22 +11,28 @@ body
   padding-right 0.5em
   padding-top: navbarHeight + 10px
   width 100% - 15%
-  overflow auto
 
 .table
   border 1px solid #bdc3c7
 
-.success
-  border 1px solid successColor
-  &:focus
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px successColor
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px successColor
-
 .error
-  border 1px solid errorColor
+  border 1px solid #a94442;
   &:focus
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px errorColor
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px errorColor
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(166, 0, 0, 0.80);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(166, 0, 0, 0.80);
+    box-shadow:         0px 0px 10px 0px rgba(166, 0, 0, 0.80);
+    border 1px solid #a94442;
+
+
+.success
+  border 1px solid #048000
+  &:focus
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(4, 128, 0, 0.80);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(4, 128, 0, 0.80);
+    box-shadow:         0px 0px 10px 0px rgba(4, 128, 0, 0.80);
+    border 1px solid #048000;
+
+
 
 
 .clickable-td
@@ -35,32 +42,8 @@ body
     cursor pointer
     background-color rgba(157, 222, 250, 0.1)
 
-.list-group-z
-    @extend .list-group
-    z-index 99999
-
-.list-group-item
-  position relative
-  display block
-  padding 10px 15px
-  margin-bottom -1px
-  background-color #fff
-  border 1px solid #ddd
-  &:first-child
-    border-top-left-radius 4px
-    border-top-right-radius 4px
-  &:last-child
-    margin-bottom 0
-    border-bottom-right-radius 4px
-    border-bottom-left-radius 4px
-  &:hover
-    cursor pointer
-    background-color rgba(38, 91, 106, 0.2)
-
-
-
 .loading
-  background url('../../images/ring.svg')
+  background url(/resources/images/ring.svg)
   background-size 75px 75px
   position absolute
   z-index 999999
@@ -106,11 +89,6 @@ div.gumga-adv-label
   &:focus
     border-color #ccc
     box-shadow 0
-
-.correct-form-group
-    @extend .form-group
-    display flex
-
 
 .bord.pull-left
   border-right 2px solid #ccc
@@ -168,6 +146,9 @@ full-width-without-padding-small
   position absolute
   width 100%
   z-index 9999
+  -webkit-box-shadow 0px 3px 10px 0px rgba(50, 50, 50, 0.32)
+  -moz-box-shadow    0px 3px 10px 0px rgba(50, 50, 50, 0.32)
+  box-shadow         0px 3px 10px 0px rgba(50, 50, 50, 0.32)
 
 @media screen and (max-width: 600px)
   .gumga-container
@@ -193,3 +174,87 @@ full-width-without-padding-small
 
 
 
+.advanced-search-holder
+  @extend .col-md-7
+  @extend .pull-right
+  padding-right 0
+  padding-left 0
+
+.little-panel
+  @extend .panel-advanced
+  width 40%
+  left 70%
+
+.nav-panel
+  @extend .little-panel
+  top 5%
+  left 89.5%
+  width 10%
+
+@media screen and (max-width: 1280px)
+  .nav-panel
+    width 15%
+    left 84.5%
+
+
+.well-login
+  @extend .well
+  @extend .col-md-4
+  @extend .col-md-offset-4
+  margin-bottom 0
+
+
+.btn-after-well
+  @extend .col-md-4
+  @extend .col-md-offset-4
+  padding-right 0
+  
+  
+.inside-list-anchor
+  display block
+  width 100%
+  cursor pointer
+  text-align: center
+
+
+.btn-insider
+  borderRadius(4px)
+  boxShadow(0px 1px 3px #666666)
+  color #fff
+  font-size 20px
+  background: #4A6B8A
+  //padding 4px 8px 4px 8px
+  text-decoration none
+  border 0
+  &:hover
+    background #588ab8
+    text-decoration none
+
+
+.list-group-mto
+  @extend .list-group
+  position absolute
+  width 100%
+  z-index 999
+
+
+.list-group-item-mto
+  @extend .list-group-item
+  cursor pointer
+  display flex
+  z-index 9999
+  &:hover
+    background-color rgba(207, 222, 245,1)
+
+.badge-helper
+  background-color #81AEDA
+  cursor pointer
+  border 0
+
+
+.input-group-addon-mto
+  @extend .input-group-addon
+  padding 0 0.25%
+  background-color transparent
+  border-left 0
+  border-right 0
