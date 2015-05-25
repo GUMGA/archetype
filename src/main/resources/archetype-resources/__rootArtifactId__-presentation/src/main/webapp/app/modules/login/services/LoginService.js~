@@ -24,7 +24,7 @@ define(['app/apiLocations'], function (APILocation) {
                 };
             }
 
-            $http.post(APILocation.apiLocation + '/public/token',{user: user.email ,password: user.password})
+            $http.post(APILocation.apiLocation + 'public/token',{user: user.email ,password: user.password})
                 .then(function (data) {
                     if (data.data.response) {
                         changeObj(false, data.data.response);

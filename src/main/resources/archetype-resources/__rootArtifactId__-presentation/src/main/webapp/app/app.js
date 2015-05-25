@@ -5,8 +5,12 @@ define(function (require) {
     require('angular-ui-router');
     require('app/modules/login/module');
     require('app/apiLocations');
-
-    angular.module('app.core', ['ui.router', 'app.login'])
+    //FIMREQUIRE
+    angular.module('app.core', 
+    	['ui.router',
+    	 'app.login'
+    	//FIMINJECTIONS
+    	])
             .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $injector) {
 
                 $urlRouterProvider.otherwise('login/log');
@@ -25,6 +29,7 @@ define(function (require) {
                             },
                             templateUrl: 'app/modules/welcome/views/welcome.html'
                         })
+                        //FIMROUTE
 
 
                 var loading = document.getElementsByClassName('loading');

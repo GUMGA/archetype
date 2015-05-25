@@ -144,7 +144,7 @@
             '               <div class="form-group">' +
             '                   <div class="list-holder">' +
             '                           <ul class="list-selectable" ng-show="selectAttribute">\n' +
-            '                               <li ng-repeat="attr in attributes" ng-click="attributeHasChanged(attr)" class="hover-list"><button class="btn btn-link"><span gumga-translate-tag="{{translate + \'.\'+attr.name}}"></span></button></li>\n' +
+            '                               <li ng-repeat="attr in attributes" ng-click="attributeHasChanged(attr)" class="hover-list"><button class="btn btn-link"><span gumga-translate-tag="{{entity + \'.\'+attr.name}}"></span></button></li>\n' +
             '                           </ul>\n' +
             '                       </div>' +
             '                       <button type=button class="btn btn-default" ng-click="selectAttribute = !selectAttribute">{{query.attribute.name || \'Attribute\'}}<span class="caret"></span></button>' +

@@ -1320,7 +1320,7 @@ define(function (require) {
 
                 function checkErrors(){
                     var errorTexts = [];
-                    if(!attrs.leftList || !attrs.rightList){
+                    if(!scope.left || !scope.right){
                         errorTexts.push('You haven\'t provided a list to GumgaManyToMany directive');
                     }
                     if(!scope.texts.left || !scope.texts.right){
