@@ -173,25 +173,22 @@ define(function(require){
                 return $http.delete(url + '/' + entity.id);
             }
 
-            function postImage(url,attribute,model){
-                var fd = new FormData();
-                fd.append(attribute,model);
-                return $http.post('http://192.168.25.201:8084/security-api/api/user/' + attribute +'/',fd,{
-                    transformRequest: angular.identity,
-                    headers: {'Content-Type': undefined}
-                });
-            }
+            function postImage(url, attribute, model) {
+                    var fd = new FormData();
+                    fd.append(attribute, model);
+                    return $http.post(url + '/' + attribute + '/', fd, {
+                        transformRequest: angular.identity,
+                        headers: {'Content-Type': undefined}
+                    });
+                }
 
-            function deleteImage(url,attribute){
-                var fd = new FormData();
-                fd.append(attribute,{});
-                return $http.delete('http://192.168.25.201:8084/security-api/api/user/' + attribute +'/',fd,{
-                    transformRequest: angular.identity,
-                    headers: {'Content-Type': undefined}
-                });
+                function deleteImage(url, attribute, value) {
+                    return $http.delete(url + '/' + attribute + '/' + value, {
+                        transformRequest: angular.identity,
+                        headers: {'Content-Type': undefined}
+                    });
 
-            }
-
+                }
         })
         .service('GumgaBroadcaster',function GumgaBroadcaster($rootScope) {
             this.deletedEntities = deletedEntities;
