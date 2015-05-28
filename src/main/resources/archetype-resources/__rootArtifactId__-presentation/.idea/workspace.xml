@@ -21,30 +21,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gumga.bundle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.bundle.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#46#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="68" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gumga.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/gumga.min.css">
+      <file leaf-file-name="gumga.services.bundle.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.services.bundle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+              <folding>
+                <element signature="e#223#1635#0" expanded="false" />
+                <element signature="e#1694#3355#0" expanded="false" />
+                <element signature="e#3418#5316#0" expanded="false" />
+                <element signature="e#5379#7449#0" expanded="false" />
+                <element signature="e#7525#7990#0" expanded="false" />
+                <element signature="e#8044#9220#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gumga.directives.bundle.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.directives.bundle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
+              <folding>
+                <element signature="e#6280#12708#0" expanded="false" />
+                <element signature="e#12812#28174#0" expanded="false" />
+                <element signature="e#28263#29942#0" expanded="false" />
+                <element signature="e#30023#31738#0" expanded="false" />
+                <element signature="e#31825#39150#0" expanded="false" />
+                <element signature="e#39217#41565#0" expanded="false" />
+                <element signature="e#41635#45267#0" expanded="false" />
+                <marker date="1432839162687" expanded="true" signature="525:571" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="734:752" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="821:837" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="958:991" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="1384:1441" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="17839:17853" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="17973:17993" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="18144:18182" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="18487:18519" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="18788:18820" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="20213:20251" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="20530:20568" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="28957:28976" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="29140:29155" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="31903:31918" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="31969:31984" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="32061:32075" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="32779:32794" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="33276:33309" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="35284:35299" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="41822:41839" placeholder="..." />
+                <marker date="1432839162687" expanded="true" signature="41967:41982" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ring.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/ring.svg">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -56,19 +101,34 @@
       <file leaf-file-name="menu.styl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/stylus/gumga/menu.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3114754">
-              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/config.js">
+      <file leaf-file-name="reset.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/reset.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="20" selection-end-column="80" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gumga.validators.bundle.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.validators.bundle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+              <folding>
+                <element signature="e#268#2857#0" expanded="false" />
+                <element signature="e#2934#4696#0" expanded="false" />
+                <element signature="e#4774#6235#0" expanded="false" />
+                <element signature="e#6323#8352#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +152,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.services.bundle.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.translate.bundle.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.validators.bundle.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/config.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.bundle.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.associations.bundle.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/config.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.directives.bundle.js" />
       </list>
     </option>
   </component>
@@ -105,9 +167,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="59" />
-    <option name="width" value="1920" />
+    <option name="x" value="50" />
+    <option name="y" value="18" />
+    <option name="width" value="1870" />
     <option name="height" value="1062" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -133,7 +195,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,172 +260,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gumga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__rootArtifactId__-presentation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -422,9 +317,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="__rootArtifactId__-presentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="__rootArtifactId__-presentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gumga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,6 +368,8 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/styles/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/styles/css" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/styles/fonts" />
       <recent name="$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules" />
     </key>
   </component>
@@ -472,6 +404,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
   </component>
@@ -486,26 +424,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="59" width="1920" height="1062" extended-state="6" />
-    <editor active="true" />
+    <frame x="50" y="18" width="1870" height="1062" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24341412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36525974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -518,50 +456,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.directives.bundle.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19148937">
-          <caret line="561" column="53" selection-start-line="561" selection-start-column="53" selection-end-line="561" selection-end-column="53" />
-          <folding>
-            <element signature="e#292#6170#0" expanded="false" />
-            <element signature="e#6240#12668#0" expanded="false" />
-            <element signature="e#12786#28148#0" expanded="false" />
-            <element signature="e#28237#29916#0" expanded="false" />
-            <element signature="e#29997#31712#0" expanded="false" />
-            <element signature="e#31799#39124#0" expanded="false" />
-            <element signature="e#39191#41539#0" expanded="false" />
-            <element signature="e#41609#45241#0" expanded="false" />
-            <element signature="e#45336#46075#0" expanded="false" />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432831116571" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.controllers.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15957446">
-          <caret line="10" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -581,14 +479,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.translate.bundle.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.directives.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#265#919#0" expanded="false" />
-            <element signature="e#1017#1893#0" expanded="false" />
-            <element signature="e#1966#3174#0" expanded="false" />
+            <element signature="e#6280#12708#0" expanded="false" />
+            <element signature="e#12812#28174#0" expanded="false" />
+            <element signature="e#28263#29942#0" expanded="false" />
+            <element signature="e#30023#31738#0" expanded="false" />
+            <element signature="e#31825#39150#0" expanded="false" />
+            <element signature="e#39217#41565#0" expanded="false" />
+            <element signature="e#41635#45267#0" expanded="false" />
+            <marker date="1432839162687" expanded="true" signature="525:571" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="734:752" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="821:837" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="958:991" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="1384:1441" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="17839:17853" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="17973:17993" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18144:18182" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18487:18519" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18788:18820" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="20213:20251" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="20530:20568" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="28957:28976" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="29140:29155" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="31903:31918" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="31969:31984" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="32061:32075" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="32779:32794" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="33276:33309" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="35284:35299" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="41822:41839" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="41967:41982" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -610,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -618,22 +541,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/config.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="20" selection-end-column="80" />
-          <folding />
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="68" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.associations.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14361702">
-          <caret line="337" column="16" selection-start-line="337" selection-start-column="16" selection-end-line="337" selection-end-column="16" />
+        <state vertical-scroll-proportion="-3.6">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#284#8250#0" expanded="false" />
             <element signature="e#8351#13106#0" expanded="false" />
@@ -642,9 +570,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.controllers.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16109785">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.search.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19148937">
+        <state vertical-scroll-proportion="0.0">
           <caret line="128" column="87" selection-start-line="128" selection-start-column="87" selection-end-line="128" selection-end-column="87" />
           <folding>
             <element signature="e#281#2548#0" expanded="false" />
@@ -652,38 +588,108 @@
             <element signature="e#6049#16500#0" expanded="false" />
             <element signature="e#16571#18078#0" expanded="false" />
             <element signature="e#18145#21754#0" expanded="false" />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432835978799" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/gumga.bundle.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.translate.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21479714">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.validators.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
           <folding>
-            <element signature="e#0#46#0" expanded="false" />
+            <element signature="e#268#2857#0" expanded="false" />
+            <element signature="e#2934#4696#0" expanded="false" />
+            <element signature="e#4774#6235#0" expanded="false" />
+            <element signature="e#6323#8352#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="68" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/gumga.min.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.services.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+          <folding>
+            <element signature="e#223#1635#0" expanded="false" />
+            <element signature="e#1694#3355#0" expanded="false" />
+            <element signature="e#3418#5316#0" expanded="false" />
+            <element signature="e#5379#7449#0" expanded="false" />
+            <element signature="e#7525#7990#0" expanded="false" />
+            <element signature="e#8044#9220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/apiLocations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/modules/gumga/modules/gumga.directives.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
+          <folding>
+            <element signature="e#6280#12708#0" expanded="false" />
+            <element signature="e#12812#28174#0" expanded="false" />
+            <element signature="e#28263#29942#0" expanded="false" />
+            <element signature="e#30023#31738#0" expanded="false" />
+            <element signature="e#31825#39150#0" expanded="false" />
+            <element signature="e#39217#41565#0" expanded="false" />
+            <element signature="e#41635#45267#0" expanded="false" />
+            <marker date="1432839162687" expanded="true" signature="525:571" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="734:752" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="821:837" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="958:991" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="1384:1441" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="17839:17853" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="17973:17993" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18144:18182" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18487:18519" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="18788:18820" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="20213:20251" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="20530:20568" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="28957:28976" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="29140:29155" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="31903:31918" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="31969:31984" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="32061:32075" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="32779:32794" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="33276:33309" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="35284:35299" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="41822:41839" placeholder="..." />
+            <marker date="1432839162687" expanded="true" signature="41967:41982" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/css/ring.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -693,8 +699,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/stylus/gumga/menu.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3114754">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -4,6 +4,7 @@
 define(function(require){
     var angular = require('angular');
     require('gumga-services');
+    var APILocations = require('app/apiLocations')
 
     angular.module('gumga.directives',['gumga.services'])
         .directive('gumgaNav', function GumgaNav($state,GumgaWebStorage,$modal,$rootScope) {
@@ -68,7 +69,7 @@ define(function(require){
                                     controller: function($scope,$modalInstance,$http){
                                         $scope.ok = function () {
                                             if($scope.user.newpass.toLowerCase() === $scope.user.newpasscheck.toLowerCase()){
-                                                $http.put('http://192.168.25.201:8084/security-api/publicoperations/token/',{
+                                                $http.put(APILocations.apiLocation  + '/publicoperations/token/',{
                                                     user: $scope.user.email ,
                                                     password: $scope.user.password,
                                                     newpassword: $scope.user.newpass})
@@ -244,7 +245,7 @@ define(function(require){
                 }
             };
         })
-        .directive('gumgaTable', function GumgaTable(GumgaUtils, $compile,$rootScope,$state,GumgaKeyboard,$timeout) {
+        .directive('gumgaTable', function GumgaTable(GumgaUtils, $compile,$rootScope,$state,$timeout) {
             return {
                 restrict: 'E',
                 scope: {

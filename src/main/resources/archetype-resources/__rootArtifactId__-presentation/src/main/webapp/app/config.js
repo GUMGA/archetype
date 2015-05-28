@@ -32,6 +32,14 @@ requirejs.config({
         "angular-mocks": {deps: ["angular"], exports: "angular-mocks"},
         "bootstrap": {deps: ["jquery"]},
         "jquery-mask": {deps: ["jquery"]},
-	    "angular-locale": {deps:['angular']}
+	    "angular-locale": {deps:['angular']},
+        "gumga-core": {deps: ['gumga-translate','gumga-search','gumga-association', 'gumga-controllers','gumga-directives','gumga-services','gumga-validators','angular-ui-router','angular-ui-bootstrap']},
+        "gumga-associations": {deps: ['gumga-services','gumga-translate']},
+        "gumga-directives": {deps: ['gumga-services','gumga-translate','notify','jquery-mask']},
+        "gumga-search": {deps: ['gumga-translate']},
+        "gumga-services": {deps: ['mousetrap']},
+        "gumga-validators":{deps: ['gumga-services']}
+
+
     }
 });
