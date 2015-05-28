@@ -47,5 +47,8 @@
   "general":{
     "coisa": "Coisa Base",
     "forgot": "Esqueceu sua Senha?"
-  }
+  },
+  "welcome":{
+     "menulabel": "Welcome"
+   }
 }
