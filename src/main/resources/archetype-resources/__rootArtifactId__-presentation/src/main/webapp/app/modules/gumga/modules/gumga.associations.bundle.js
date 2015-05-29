@@ -377,7 +377,7 @@ define(function(require){
 						}
 					}
 					function removeFromList(obj){
-						eventHandler.delete({$value: value});
+						eventHandler.delete({$value: obj });
 						scope.children.splice(scope.children.indexOf(obj),1);
 					}
 					function newModal(obj){
