@@ -214,83 +214,77 @@ define(function(require){
 				}
 			}
 		})
-		.directive('gumgaManyToOne',function GumgaManyToOne($modal,$templateCache,$timeout,GumgaKeyboard){
+		.directive('gumgaManyToOne',function GumgaManyToOne($modal,$templateCache,GumgaKeyboard){
+
 			$templateCache.put('mtoItem.html',
 				'      <span bind-html-unsafe="match.label | typeaheadHighlight:query" style="cursor: pointer;"></span>');
+
 			var template ='<div class="full-width-without-padding">';
-			template += '	<div class="form-group has-success">';
-			template += '		<div class="input-group" ng-init="open = false">';
-			template += '			<input class="form-control" ng-model="model" type="text" typeahead="{{typeaheadSyntax}} |filter: $viewValue" ng-model-options="{debounce: 200 }" style="border-right: 0;" ng-change="teste()">';
+			template += '	<div class="form-group">';
+			template += '		<div ng-class="showFullView() || authorizeAdd ? \'input-group\' : \'\'">';
+			template += '			<input class="form-control" ng-model="model" type="text" typeahead="$value as $value[field] for $value in searchMethod({param: model})" style="border-right: 0;">';
 			template += '			<span class="input-group-addon-mto" ng-show="showFullView()"> ';
-			template += '				<button class="badge badge-helper" ng-click="halp(model)"><i class="glyphicon glyphicon-resize-full"></i></button>';
+			template += '				<button class="badge badge-helper" ng-click="halp(model)" ><i class="glyphicon glyphicon-resize-full"></i></button>';
 			template += '			</span>';
-			template += '			<span class="input-group-addon" style="padding: 0 0.25%" ng-show="showPlus()"> ';
+			template += '			<span class="input-group-addon" style="padding: 0 0.25%" ng-show="authorizeAdd"> ';
 			template += '				<button type="button" style="border: 0;background-color: transparent" ng-click="addNew(model)" ><i class="glyphicon glyphicon-plus"></i></button>';
 			template += '			</span>';
-			template += '			<span class="input-group-btn">';
-			template += '				<button class=" btn btn-default" ng-click="openClickHandler()" type="button"><span class="caret"></span></button>';
-			template += '			</span>';
 			template += '		</div>';
+			template += '	</div>';
 			template += '</div>';
-			template += '</div>';
+
 			return {
 				restrict : 'E',
 				template: template,
 				require: '^form',
 				scope : {
-					model:'=ngModel',
+					model:'=value',
 					searchMethod: '&',
-					postMethod: '&',
-					onNewValueAdded: '&',
-					authorizeAdd: '=',
-					onValueVisualizationOpened: '&',
-					onValueVisualizationClosed: '&'
+					postMethod: '&addMethod',
+					field: '@',
+					onNewValueAdded: '&?',
+					onValueVisualizationOpened: '&?',
+					onValueVisualizationClosed: '&?'
 				},
 				link: function(scope, elm, attrs,ctrl){
-					if(!scope.authorizeAdd){
-						scope.authorizeAdd = true;
+
+					var ngModelCtrl = elm.find('input').controller('ngModel'),
+						eventHandler = {
+							newValueAdded: (attrs.onNewValueAdded ? scope.onNewValueAdded : angular.noop),
+							valueVisualizationOpened: (attrs.onValueVisualizationOpened ? scope.onValueVisualizationOpened :angular.noop),
+							valueVisualizationClosed: (attrs.onValueVisualizationClosed ? scope.onValueVisualizationClosed :angular.noop)
+						},
+						async;
+
+
+					!attrs.authorizeAdd ? scope.authorizeAdd = true : scope.authorizeAdd = JSON.parse(attrs.authorizeAdd);
+					!attrs.async ? async = true : async = JSON.parse(attrs.async);
+
+					function checkIfItIsString(string){
+						return ((typeof string).toUpperCase().trim()) === 'string'.toUpperCase().trim() && string.length > 1;
 					}
-					var eventHandler = {
-						newValueAdded: (attrs.onNewValueAdded ? scope.onNewValueAdded : angular.noop),
-						valueVisualizationOpened: (attrs.onValueVisualizationOpened ? scope.onValueVisualizationOpened :angular.noop),
-						valueVisualizationClosed: (attrs.onValueVisualizationClosed ? scope.onValueVisualizationClosed :angular.noop)
-					};
-					scope.field = attrs.field;
-					var ngModelCtrl = elm.find('input').controller('ngModel');
+
 					scope.$watch('model',function(){
-						if(((typeof scope.model).toUpperCase().trim()) === 'string'.toUpperCase().trim() && scope.model.length > 1){
-							ctrl.$setValidity('GumgaManyToOne',false);
-						} else {
-							ctrl.$setValidity('GumgaManyToOne',true);
-						}
+						checkIfItIsString(scope.model) ?
+							ctrl.$setValidity('GumgaManyToOne',false) : ctrl.$setValidity('GumgaManyToOne',true);
 					});
-					GumgaKeyboard.bindToElement(elm.find('input')[0],'down',function(){
-						if(!ngModelCtrl.$viewValue) {
-							ngModelCtrl.$setViewValue(' ');
-						}
-					});
-					scope.openClickHandler = function(){
-						if(!ngModelCtrl.$viewValue) {
-							ngModelCtrl.$setViewValue(' ');
-						}
-					};
+
+					GumgaKeyboard.bindToElement(elm.find('input')[0],'down',function(){ngModelCtrl.$setViewValue(' ')});
+
 					scope.showFullView = function(){
 						return ((typeof scope.model).toUpperCase().trim()) === 'object'.toUpperCase().trim();
 					};
+
 					scope.showPlus = function(){
 						return ((typeof scope.model).toUpperCase().trim()) === 'string'.toUpperCase().trim() && scope.authorizeAdd === true;
 					};
-					$timeout(function(){
-						document.querySelector('.dropdown-menu')
-							.style.width = '100%';
-					},20);
-					scope.addNew = function(text){
-						if(attrs.postMethod){
-							scope.postMethod({value: text})
-								.then(function(values){
-									eventHandler.newValueAdded({$value:value});
-									scope.model = values.data.data;
 
+					scope.addNew = function(text){
+						if(async) {
+							scope.postMethod({value: text})
+								.then(function (values) {
+									eventHandler.newValueAdded({$value: values});
+									scope.model = values.data.data;
 								});
 						} else {
 							scope.list.push(text);
@@ -300,7 +294,7 @@ define(function(require){
 						var template = '';
 						template =
 							'<div class="modal-body">\n';
-						for (var key in obj) if (obj.hasOwnProperty(key) && key != '$$hashKey') {
+						for (var key in obj) if (obj.hasOwnProperty(key) && key != '$$hashKey' && key != 'oi' && key != 'version') {
 							template += '   <div class="form-group">\n';
 							template += '       <label><small>'+ key +'</small></label>\n';
 							template += '       <input type="text" ng-model="$value.' + key +'" disabled class="form-control"/>\n';
@@ -326,12 +320,10 @@ define(function(require){
 								}
 							}
 						});
-
 						mi.result.then(function(){
 							eventHandler.valueVisualizationClosed();
 						})
 					};
-
 				}
 			};
 		})
