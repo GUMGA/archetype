@@ -66,33 +66,24 @@ define(function (require) {
                 $rootScope.$on('$stateChangeSuccess', function (event, toState) {
                     updateBreadcrumb(toState.name, toState.data.id);
                 });
-
-                function getIndex(id) {
-                    var x;
-                    $rootScope.breadcrumbs.forEach(function (elm, index) {
-                        if (id === elm.id) {
-                            x = index;
+		
+		function updateBreadcrumb(state, id) {
+                    function get(id) {
+                        for (var i = 0, len = $rootScope.breadcrumbs.length; i < len; i++) {
+                            if ($rootScope.breadcrumbs[i].id === id) {
+                                return i;
+                            }
                         }
-                    });
-                    return x;
-                }
-
-                function updateBreadcrumb(state, id) {
-                    if (state === 'login.log' || state === 'multientity') {
-                        $rootScope.breadcrumbs = [];
+                    }
+                    
+                    if (id && get(id) >= 0) {
+                        $rootScope.breadcrumbs.splice(get(id), $rootScope.breadcrumbs.length - get(id), {state: state, id: id});
                     } else {
-                        if ($rootScope.breadcrumbs.filter(filterArray).length === 0) {
-                            $rootScope.breadcrumbs.push({state: state, id: id});
-                        } else {
-                            $rootScope.breadcrumbs.splice(getIndex(id), 5, {state: state, id: id});
-                        }
-                        $rootScope.$broadcast('breadChanged');
+                        $rootScope.breadcrumbs.push({state: state, id: id});
                     }
-
-                    function filterArray(element) {
-                        return element.id === id;
-                    }
+                    !id ? $rootScope.breadcrumbs = [] : angular.noop;
+                    $rootScope.$broadcast('breadChanged');
                 }
 
-            })
+           })
 });

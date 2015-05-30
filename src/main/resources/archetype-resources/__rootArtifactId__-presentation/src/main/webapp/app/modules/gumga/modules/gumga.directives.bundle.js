@@ -49,6 +49,8 @@ define(function(require){
                 template: template.join('\n'),
                 link: function (scope, el, attrs) {
                     scope.info = GumgaWebStorage.getSessionStorageItem('user');
+			scope.navlinks = [{text:'Change Password',glyphicon: 'glyphicon glyphicon-user',value: 'pass'},{text: 'Logout',glyphicon: 'glyphicon glyphicon-log-out',value: 'logout'}];
+
                     scope.treatUrl = function () {
                         $state.go('multientity', {'search': scope.search});
                     };

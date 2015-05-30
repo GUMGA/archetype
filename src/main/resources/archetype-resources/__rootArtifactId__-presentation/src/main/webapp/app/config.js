@@ -6,7 +6,7 @@ requirejs.config({
         "angular-mocks": "node_modules/angular-mocks/angular-mocks",
         "angular-ui-bootstrap": "bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min",
         "angular-ui-router": "bower_components/angular-ui-router/release/angular-ui-router.min",
-        "angular-locale": "../resources/javascript/angular-locale_pt-br",
+        "angular-locale": "resources/javascript/angular-locale_pt-br",
         "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min",
         "jquery": "bower_components/jquery/dist/jquery.min",
         "es5-sshim": "bower_components/es5-shim/es5-shim.min",

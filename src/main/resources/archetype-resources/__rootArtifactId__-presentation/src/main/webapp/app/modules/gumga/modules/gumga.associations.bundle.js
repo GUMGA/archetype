@@ -5,7 +5,7 @@ define(function(require){
 	var angular = require('angular');
 	require('gumga-services');
 	return angular.module('gumga.associations',['gumga.services'])
-		.directive('gumgaManyToMany',function GumgaManyToMany($compile,GumgaUtils,$modal) {
+		.directive('gumgaManyToMany',function GumgaManyToMany($compile,$timeout,GumgaUtils,$modal) {
 			return {
 				restrict: 'E',
 				scope: {
@@ -127,7 +127,9 @@ define(function(require){
 						scope.leftFilter = '';
 						scope.postMethod({value: text });
 						eventHandler.newValueAdded();
-						scope.leftFn({param: ''});
+						$timeout(function(){
+							scope.leftFn({param: ' '})
+						},50)
 					};
 					scope.showClass = function(){
 						if(scope.showPlus()){
@@ -138,7 +140,7 @@ define(function(require){
 					scope.halp = function(obj){
 						scope.template =
 							'<div class="modal-body">\n';
-						for (var key in obj) if (obj.hasOwnProperty(key) && key != '$$hashKey') {
+						for (var key in obj) if (obj.hasOwnProperty(key) && key != '$$hashKey' && key != 'oi' && key != 'version') {
 							scope.template += '   <div class="form-group">\n';
 							scope.template += '       <label><small>'+ key +'</small></label>\n';
 							scope.template += '       <input type="text" ng-model="$value.' + key +'" disabled class="form-control"/>\n';
@@ -329,7 +331,8 @@ define(function(require){
 		})
 		.directive('gumgaOneToMany',function GumgaOneToMany($modal){
 			var template = [
-				'<div class="col-md-12" style="padding-left: 0;padding-right: 0">',
+				'<div class="full-width-without-padding">',
+				'   <strong><small>{{label}}</small></strong>	',
 				'   <button type="button" class="btn btn-default" ng-click="newModal()">New</button>',
 				'   <ul class="list-group">',
 				'       <li ng-repeat="child in children" class="list-group-item">',
@@ -351,6 +354,7 @@ define(function(require){
 					name: '@',
 					controller: '@',
 					onDelete: '&',
+					label: '@?',
 					onValueVisualizationOpened: '&',
 					onValueVisualizationClosed: '&'
 				},
