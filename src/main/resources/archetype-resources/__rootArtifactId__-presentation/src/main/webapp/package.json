@@ -1,7 +1,7 @@
 {
-  "name": "webapp",
+  "name": "gumgaframework",
   "version": "1.0.0",
-  "description": "Iremos utilizar essa arquitetura:",
+  "description": "description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://opsigor@bitbucket.org/gumga/newpresentation.git"
+    "url": "http://gumga.com.br"
   },
   "devDependencies": {
     "browser-sync": "^2.7.0",

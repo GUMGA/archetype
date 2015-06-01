@@ -1,8 +1,8 @@
 {
-  "name": "gumga-framework-frontend",
-  "version": "2.0.0",
+  "name": "gumga-framework",
+  "version": "1.0.0",
   "authors": [
-    "opsigor <igorpsant95@gmail.com>"
+    "opsigor <igor@gumga.com.br>"
   ],
   "license": "CC BY-ND 4.0",
   "ignore": [
@@ -23,9 +23,7 @@
     "angular-mocks": "~1.3.15",
     "remarkable-bootstrap-notify": "~3.0.0",
     "animate.css": "~3.2.6",
-    "ng-file-upload": "~3.3.4",
-    "bootstrap-stylus": "~4.0.4",
-    "angular-input-masks": "~1.4.2"
+    "bootstrap-stylus": "~4.0.4"
   },
   "resolutions": {
     "angular": "1.3.15"
