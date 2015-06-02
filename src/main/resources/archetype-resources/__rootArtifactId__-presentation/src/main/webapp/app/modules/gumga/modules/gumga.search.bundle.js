@@ -36,7 +36,7 @@
                     scope.entityToTranslate = attrs.translateEntity;
 		    var eventHandler = {
 			search: attrs.onSearch ? scope.onSearch : angular.noop,
-			advanced: attrs.onAdvancedSearch: scope.onAdvancedSearch : angular.noop
+			advanced: attrs.onAdvancedSearch ? scope.onAdvancedSearch : angular.noop
 		    }
                     if(attrs.advanced === "true"){
                         scope.adv = true;
