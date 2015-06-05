@@ -52,7 +52,7 @@ define(function (require) {
                             loading[0].setAttribute('class', 'loading');
                             if (rejection.status === 403) {
                                 var state = $injector.get('$state');
-                                state.go('login');
+                                state.go('login.log');
                             }
                             return $q.reject(rejection);
                         }
