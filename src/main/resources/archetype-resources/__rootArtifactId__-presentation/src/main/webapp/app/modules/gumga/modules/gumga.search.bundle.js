@@ -26,18 +26,18 @@
                 scope : {
                     advanced: '&advancedMethod',
                     normal: '&searchMethod',
-		    onSearch: '&',
-		    onAdvancedSearch: '&'
+            onSearch: '&',
+            onAdvancedSearch: '&'
                 },
                 link: function(scope,elm,attrs,controller,transcludeFn){
                     scope.adv = false;
                     scope.attributes = [];
                     scope.normalFields = attrs.fields.split(',');
                     scope.entityToTranslate = attrs.translateEntity;
-		    var eventHandler = {
-			search: attrs.onSearch ? scope.onSearch : angular.noop,
-			advanced: attrs.onAdvancedSearch ? scope.onAdvancedSearch : angular.noop
-		    }
+                    var eventHandler = {
+                    search: attrs.onSearch ? scope.onSearch : angular.noop,
+                    advanced: attrs.onAdvancedSearch ? scope.onAdvancedSearch : angular.noop
+                    }
                     if(attrs.advanced === "true"){
                         scope.adv = true;
                     }
@@ -57,13 +57,13 @@
 
                     scope.$on('advanced',function(ev,data){
                         scope.advanced({param: data});
-			eventHandler.search();
+                         eventHandler.search();
                         //ev.stopPropagation() || angular.noop;
                     });
 
                     scope.$on('normal',function(ev,data){
                         scope.normal({field: data.field,param: data.param});
-			eventHandler.advanced()
+                         eventHandler.advanced()
                         //ev.stopPropagation() || angular.noop;
                     });
 
@@ -128,6 +128,7 @@
                     scope.doSearch = function(txt){
                         scope.$emit('normal',{field: scope.models.returnString(),param:txt || ''});
                         scope.showLittlePanel = !scope.showLittlePanel;
+                        scope.searchField = '';
                     };
 
                 }
@@ -152,10 +153,10 @@
                 '               <div class="form-group">' +
                 '                   <div class="list-holder">' +
                 '                           <ul class="list-selectable" ng-show="selectAttribute">\n' +
-                '                               <li ng-repeat="attr in attributes" ng-click="attributeHasChanged(attr)" class="hover-list"><button class="btn btn-link">{{attr.name}}</button></li>\n' +
+                '                               <li ng-repeat="attr in attributes" ng-click="attributeHasChanged(attr)" class="hover-list"><button class="btn btn-link"  gumga-translate-tag="{{translate + \'.\' + attr.name}}"></button></li>\n' +
                 '                           </ul>\n' +
                 '                       </div>' +
-                '                       <button type=button class="btn btn-default" ng-click="selectAttribute = !selectAttribute">{{query.attribute.name || \'Attribute\'}}<span class="caret"></span></button>' +
+                '                       <button type=button class="btn btn-default" ng-click="selectAttribute = !selectAttribute" >{{query.attribute.name || \'Attribute\'}}<span class="caret"></span></button>' +
                 '                      <div class="list-holder">' +
                 '                           <ul class="list-selectable" ng-show="selectHQL">\n' +
                 '                               <li ng-repeat="opt in hqlOpts" class="hover-list" ng-click="handleHqlOption(opt)"><button class="btn btn-link" >{{opt.label}}</button></li>\n' +
@@ -313,7 +314,7 @@
 
                     scope.doSearch = function(txt){
                         scope.$emit('normal',{field: scope.models.returnString(),param:txt || ''});
-                        scope.showLittlePanel = !scope.showLittlePanel;
+                        scope.searchInputText = '';
                     };
                 }
             };

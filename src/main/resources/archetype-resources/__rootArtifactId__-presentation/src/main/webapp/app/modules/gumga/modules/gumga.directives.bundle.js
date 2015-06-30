@@ -12,7 +12,7 @@ define(function(require){
                 '<nav id="navbar">',
                 '   <a href="#" class="navbar-logo">{{title | uppercase}}</a>' +
                 '   <span style="color: white; font-size: 1.4em;margin-left: 2%"><small>{{info.organization}}</small></span>',
-                '   <b class="pull-right"><a href class="status-navbar" ng-click="showPanelNavBar()"><small style="font-size: 85%;mar">{{info.user}}<i class="glyphicon glyphicon-triangle-bottom" style="margin-left: 1px"></i> </small></a></b>',
+                '   <b class="pull-right"><img ng-show="info.picture" class="img-circle" style="width: 40px;height: 40px;margin-right:2px;" src="{{info.picture}}" /> <a href class="status-navbar" ng-click="showPanelNavBar()"><small style="font-size: 85%;mar">{{info.user}}<i class="glyphicon glyphicon-triangle-bottom" style="margin-left: 1px"></i> </small></a></b>',
                 '    <a ng-click="treatUrl()" class="btn btn-default btn-sm pull-right" style="margin-top: 8px;margin-right: 10%">Search</a>',
                 '   <input type="text" ng-model="search" class="navbar-input" placeholder="Search">',
                 '</nav>' ,
@@ -49,9 +49,10 @@ define(function(require){
                 template: template.join('\n'),
                 link: function (scope, el, attrs) {
                     scope.info = GumgaWebStorage.getSessionStorageItem('user');
-			scope.navlinks = [{text:'Change Password',glyphicon: 'glyphicon glyphicon-user',value: 'pass'},{text: 'Logout',glyphicon: 'glyphicon glyphicon-log-out',value: 'logout'}];
+                    scope.navlinks = [{text:'Change Password',glyphicon: 'glyphicon glyphicon-user',value: 'pass'},{text: 'Logout',glyphicon: 'glyphicon glyphicon-log-out',value: 'logout'}];
 
                     scope.treatUrl = function () {
+
                         $state.go('multientity', {'search': scope.search});
                     };
                     scope.$on('close',function(){
@@ -105,7 +106,7 @@ define(function(require){
                         });
 
                     scope.doLogout = function () {
-                        $state.go('login');
+                        $state.go('login.log');
                     };
                 }
             };
@@ -524,13 +525,14 @@ define(function(require){
                 };
             }
         })
-        .directive('gumgaFormButtons', function GumgaFormButtons($state, $stateParams) {
+        .directive('gumgaFormButtons', function GumgaFormButtons($state, $stateParams,$modal) {
             return {
                 restrict: 'E',
                 scope: {
                     do: '&submit',
                     valid: '=',
-                    continue: '='
+                    continue: '=',
+                    confirmDirty: '=?'
                 },
                 template:
                 '<div class="full-width-without-margin">'+
@@ -545,6 +547,9 @@ define(function(require){
                 '<div>',
                 require: '^form',
                 link: function (scope, elm, attrs, ctrl) {
+                    if(!attrs.confirmDirty){
+                        scope.confirmDirty = true;
+                    }
                     if(!$stateParams.id){
                         scope.inNew = true;
                     }
@@ -556,7 +561,43 @@ define(function(require){
                     };
 
                     scope.back = function () {
-                        $state.go(attrs.back);
+                        if(scope.confirmDirty && ctrl.$dirty){
+                            var modal = $modal.open({
+                                template:
+                                '<div>'+
+                                '   <section class="modal-body">' +
+                                '       <h4>Deseja sair sem salvar as alterações?</h4>' +
+                                '   </section>'+
+                                '   <div class="modal-footer">'+
+                                '       <button class="btn btn-default" ng-click="handleClose(false)">Não</button>' +
+                                '       <button class="btn btn-default" ng-click="handleClose(true)">Sim</button>' +
+                                '   </div>'+
+                                '</div>',
+                                backdrop: false,
+                                keyboard: false,
+                                size: 'sm',
+                                controller: function($scope,$modalInstance,$state,$rootScope){
+                                    $scope.handleClose = function(_boolean){
+                                        _boolean ? $modalInstance.close(true) : $modalInstance.close(false);
+                                    };
+                                    if($state){
+                                        $scope.currentState =$state.current.name;
+                                        $rootScope.$on('$stateChangeStart',
+                                            function(event, toState, toParams, fromState, fromParams){
+                                                $modalInstance.dismiss();
+                                            })
+                                    }
+                                }
+                            });
+                            modal.result.then(function(shouldIGo){
+                                if(shouldIGo){
+                                    $state.go(attrs.back);
+                                    return 0;
+                                }
+                            })
+                        } else {
+                            $state.go(attrs.back);
+                        }
                     };
 
                 }
@@ -568,7 +609,8 @@ define(function(require){
                 scope: {
                     data: '='
                 },
-                template: '<div ng-repeat="arr in array">\n' +
+                template: '<strong ng-show="data.length < 1">Nenhum resultado encontrado</strong>'+
+                '<div ng-repeat="arr in array">\n' +
                 '   <a class="btn btn-link" ui-sref="{{arr.link}}"><h5>{{arr.fatherName}}</h5></a>\n' +
                 '   <ul ng-repeat="x in arr.txt" class="list-unstyled">\n' +
                 '       <li><strong class="text-info">{{x.title | uppercase }}</strong>: {{x.description}}</li>' +
@@ -578,6 +620,7 @@ define(function(require){
                     googleGenerator();
                     function googleGenerator() {
                         var modifiedEntries = [];
+                        console.log(scope.data);
                         angular.forEach(scope.data, function (a) {
                             var id;
                             var o = {};
@@ -729,54 +772,6 @@ define(function(require){
                 }
             };
         })
-        .directive('gumgaAlert', function GumgaAlert($rootScope) {
-
-            return {
-                restrict: 'EA',
-                scope: false,
-                compile: function(){
-
-                    $rootScope.$on('dangerMessage', function (ev, data) {
-                        notify('glyphicon glyphicon-exclamation-sign', data.title, data.message, 'danger');
-                    });
-                    $rootScope.$on('successMessage', function (ev, data) {
-                        notify('glyphicon glyphicon-ok', data.title, data.message, 'success');
-                    });
-                    $rootScope.$on('warningMessage', function (ev, data) {
-                        notify('glyphicon glyphicon-warning-sign', data.title, data.message, 'warning');
-                    });
-                    $rootScope.$on('infoMessage', function (ev, data) {
-                        notify('glyphicon glyphicon-info-sign', data.title, data.message, 'info');
-                    });
-
-                    function notify(icon, title, message, type) {
-                        $.notify({
-                            icon: icon,
-                            title: title,
-                            message: message
-                        }, {
-                            type: type,
-                            offset: 50,
-                            timer: 100,
-                            delay: 3500,
-                            onShow: $rootScope.$broadcast('onNotificationShow'),
-                            onClose: $rootScope.$broadcast('onNotificationClose'),
-                            allow_dismiss: true,
-                            animate: {
-                                enter: 'animated bounceInRight',
-                                exit: 'animated bounceOutRight'
-                            },
-                            template: '<div data-notify="container" class="col-xs-9 col-sm-3 alert alert-{0}" role="alert">' +
-                            '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-                            '<span data-notify="icon"></span> ' +
-                            '<span data-notify="title"><b>{1}</b></span><br> ' +
-                            '<span data-notify="message">{2}</span>' +
-                            '</div>'
-                        });
-                    }
-                }
-            };
-        })
         .directive('gumgaUpload', function GumgaUpload($http,$parse){
             var template =
                 '<div class="full-width-without-padding">' +
@@ -845,6 +840,7 @@ define(function(require){
                                 var x = attrs.attribute.split('.');
                                 scope.uploadMethod({image: scope[x[0]][x[1]]})
                                     .then(function(val){
+                                        console.log(val);
                                         scope.model.name = val.data;
                                     });
                             };
