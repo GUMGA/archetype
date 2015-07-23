@@ -5,7 +5,6 @@
 define(function (require) {
     'use strict';
     var angular = require('angular');
-    require('gumga-core');
-    return angular.module('app.login.services', ['gumga.core'])
+    return angular.module('app.login.services', [])
         .service('LoginService', require('app/modules/login/services/LoginService'));
 });

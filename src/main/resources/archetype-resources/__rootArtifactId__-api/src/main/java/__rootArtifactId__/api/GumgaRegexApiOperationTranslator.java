@@ -8,20 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @author munif
- */
 @Component
 public class GumgaRegexApiOperationTranslator implements ApiOperationTranslator {
 
     private final List<OperationExpression> operations = Arrays.asList(
-            new OperationExpression("ALL_OPERATIONS", ".*", ".*"),
-            new OperationExpression("CoisaCRUD", ".*coisa.*", "GET"),
-            new OperationExpression("CoisaCRUD", ".*coisa.*", "PUT"),
-            new OperationExpression("CoisaCRUD", ".*coisa.*", "POST"),
-            new OperationExpression("CoisaCRUD", ".*coisa.*", "DELETE")
-
+            new OperationExpression("ALL_OPERATIONS", ".*", ".*")
     );
 
     public String getOperation(String url, String method) {

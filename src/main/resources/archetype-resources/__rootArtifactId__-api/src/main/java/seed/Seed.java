@@ -19,10 +19,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
-	@Autowired
-	@Qualifier("coisaSeed")
-	private AppSeed coisaSeed;
-	
 	private AtomicBoolean started = new AtomicBoolean(false);
 
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -42,7 +38,6 @@ public class Seed implements ApplicationListener<ContextRefreshedEvent> {
 	
 	private List<AppSeed> seeds() {
 		List<AppSeed> list = new LinkedList<>();
-		list.add(coisaSeed);
 		return list;
 	}
 

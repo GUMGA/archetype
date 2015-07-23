@@ -1,9 +1,9 @@
 [
-{
+	{
   "label": "Home",
   "URL": "welcome",
   "key": "CRUD-BASE",
   "icon": "glyphicon glyphicon-home",
   "filhos": []
-}
+	}	
 ]

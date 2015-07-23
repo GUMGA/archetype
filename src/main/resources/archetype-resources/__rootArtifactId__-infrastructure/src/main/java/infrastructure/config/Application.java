@@ -7,6 +7,8 @@ import gumga.framework.application.GumgaRepositoryFactoryBean;
 
 import java.util.Properties;
 
+import gumga.framework.domain.GumgaQueryParserProvider;
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -40,6 +42,7 @@ public class Application {
 
     @Bean
     public static DataSource dataSource() {
+        GumgaQueryParserProvider.defaultMap = GumgaQueryParserProvider.getOracleLikeMap();
         HikariConfig config = new HikariConfig();
 
 //        config.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");

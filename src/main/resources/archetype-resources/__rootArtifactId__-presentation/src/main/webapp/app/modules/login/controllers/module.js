@@ -6,7 +6,7 @@ define(function (require) {
     'use strict';
     var angular = require('angular');
     require('app/modules/login/services/module');
-    require('angular-ui-bootstrap');
+    require('angular-bootstrap');
 
 
 

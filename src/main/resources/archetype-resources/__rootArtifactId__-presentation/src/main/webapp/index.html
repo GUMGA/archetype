@@ -5,24 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>Gumga</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/styles/css/reset.css"/>
-    <link rel="stylesheet" href="resources/styles/css/gumga.min.css"/>
+    <link rel="stylesheet" href="bower_components/gumga-components/dist/gumga.min.css"/>
     <link rel="stylesheet" href="bower_components/animate.css/animate.min.css"/>
 </head>
 <body>
-    <div class="loading">
-        
+    <div class="loading">        
     </div>
-    <div ui-view gumga-translate="pt-br">
 
+    <div ui-view style="height: 100%">
     </div>
 
     <script src="bower_components/requirejs/require.js"></script>
 
     <script src="app/config.js"></script>
-    <script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDgCMP8Pr-Z4RVyBm1jxDvgRXzLT-7ABtQ&sensor=false">
-</script>
 <script>
     requirejs(['angular', 'app/app'], function (angular) {
         angular.bootstrap(document, ['app.core']);
