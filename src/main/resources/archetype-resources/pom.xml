@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gumga.framework.version>1.1.1-SNAPSHOT</gumga.framework.version>
+        <gumga.framework.version>1.2.0-SNAPSHOT</gumga.framework.version>
         <spring.security.version>3.2.3.RELEASE</spring.security.version>
         <spring.version>4.0.2.RELEASE</spring.version>
         <hibernate.version>4.3.1.Final</hibernate.version>
@@ -19,58 +19,58 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-domain</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-infrastructure</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-application</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-gateway</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-api</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${rootArtifactId}-presentation</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <!-- DEPENDENCIAS do Framework GUMGA    -->
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-core</artifactId>
-                <version>${gumga.framework.version}</version>
+                <version>1.2.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-domain</artifactId>
-                <version>${gumga.framework.version}</version>
+                <version>1.2.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-presentation</artifactId>
-                <version>${gumga.framework.version}</version>
+                <version>1.2.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-security</artifactId>
-                <version>${gumga.framework.version}</version>
+                <version>1.2.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-application</artifactId>
-                <version>${gumga.framework.version}</version>
+                <version>1.2.0-SNAPSHOT</version>
             </dependency>
             <!-- DEPENDENCIAS em geral-->
             <dependency>
