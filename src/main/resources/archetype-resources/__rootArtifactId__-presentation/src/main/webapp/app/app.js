@@ -7,7 +7,7 @@ define(function (require) {
     require('app/apiLocations');
     //FIMREQUIRE
     angular.module('app.core', 
-    	['ui.router', 'gumga.components',
+    	['ui.router', 'gumga.core',
        'app.login'
     	//FIMINJECTIONS
     	])
