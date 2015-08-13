@@ -50,27 +50,27 @@
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-core</artifactId>
-                <version>1.2.0</version>
+                <version>${gumga.framework.version}</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-domain</artifactId>
-                <version>1.2.0</version>
+                <version>${gumga.framework.version}</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-presentation</artifactId>
-                <version>1.2.0</version>
+                <version>${gumga.framework.version}</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-security</artifactId>
-                <version>1.2.0</version>
+                <version>${gumga.framework.version}</version>
             </dependency>
             <dependency>
                 <groupId>gumga.framework</groupId>
                 <artifactId>gumga-application</artifactId>
-                <version>1.2.0</version>
+                <version>${gumga.framework.version}</version>
             </dependency>
             <!-- DEPENDENCIAS em geral-->
             <dependency>
