@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gumga.framework.version>1.2.0</gumga.framework.version>
+        <gumga.framework.version>1.2.3-SNAPSHOT</gumga.framework.version>
         <spring.security.version>3.2.3.RELEASE</spring.security.version>
         <spring.version>4.0.2.RELEASE</spring.version>
         <hibernate.version>4.3.1.Final</hibernate.version>
