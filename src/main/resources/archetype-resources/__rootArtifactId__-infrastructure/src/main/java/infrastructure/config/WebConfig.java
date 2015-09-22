@@ -40,7 +40,6 @@ import gumga.framework.security.GumgaRequestFilter;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"${package}.presentation.web", "gumga.framework"})
-@Import({Application.class})
 public class WebConfig extends WebMvcConfigurerAdapter implements WebApplicationInitializer {
 
     @Override
