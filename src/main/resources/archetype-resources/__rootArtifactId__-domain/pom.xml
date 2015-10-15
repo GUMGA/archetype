@@ -73,11 +73,11 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Plugin Para gerar o diagrama toda a vez que da build    -->
+            <!-- Plugin que gera o diagrama de classes -->
             <plugin>
                 <groupId>br.com.gumga</groupId>
                 <artifactId>gumgag</artifactId>
-                <version>1.2.0</version>
+                <version>1.2.1</version>
                 <executions>
                     <execution>
                         <phase>install</phase>
