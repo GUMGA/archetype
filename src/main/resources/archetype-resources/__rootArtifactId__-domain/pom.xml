@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <packaging>jar</packaging>
-    
-    
+
+
     <dependencies>
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
@@ -73,7 +73,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Plugin que gera o diagrama de classes -->
+            <!-- Plugin que gera o diagrama de classes
             <plugin>
                 <groupId>br.com.gumga</groupId>
                 <artifactId>gumgag</artifactId>
@@ -87,7 +87,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+            --> 
         </plugins>
     </build>
 </project>
