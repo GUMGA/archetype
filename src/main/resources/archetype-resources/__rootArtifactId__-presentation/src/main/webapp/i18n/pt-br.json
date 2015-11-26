@@ -50,5 +50,18 @@
   },
   "welcome":{
      "menulabel": "Welcome"
-   }
+   },
+   "home": {
+  "menulabel": "Início"
+},
+"gumgatagdefinition":{
+    "name":"Nome"
+    ,"menuLabel": "Tags"
+},
+"configuration": {
+  "menulabel": "Configurações",
+  "gumgatagdefinition": "Tags",
+  "gumgacustomfield": "Atributos Genéricos"
+}
+
 }

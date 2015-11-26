@@ -5,9 +5,15 @@ define(function(require) {
   require('gumga-components');
   require('app/modules/login/module');
   require('app/apiLocations');
+  require('app/modules/gumgatagdefinition/module');
+  require('app/modules/gumgacustomfield/module');
   //FIMREQUIRE
-  angular.module('app.core', ['ui.router', 'gumga.core',
-      'app.login'
+  angular.module('app.core', [
+    'ui.router'
+    ,'gumga.core'
+    ,'app.login'
+    ,'app.gumgatagdefinition'
+    ,'app.gumgacustomfield'
   //FIMINJECTIONS
     ])
     .config(function($stateProvider, $urlRouterProvider, $httpProvider, $injector, GumgaAlertProvider) {
@@ -51,6 +57,14 @@ define(function(require) {
               return $http.get(url + $stateParams.search);
             }]
           }
+        })
+        .state('gumgatagdefinition', {
+             url: '/gumgatagdefinition',
+             templateUrl: 'app/modules/gumgatagdefinition/views/base.html'
+        })
+        .state('gumgacustomfield', {
+             url: '/gumgacustomfield',
+             templateUrl: 'app/modules/gumgacustomfield/views/base.html'
         })
         //FIMROUTE
 

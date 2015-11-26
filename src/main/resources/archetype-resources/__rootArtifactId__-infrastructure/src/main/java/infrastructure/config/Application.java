@@ -68,12 +68,12 @@ public class Application {
 
         Properties properties = new Properties();
         properties.put("eclipselink.weaving", "false");
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 
         //properties.put("hibernate.hbm2ddl.auto", "update");
         //properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        properties.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
+        properties.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.EJB3NamingStrategy");
         //properties.put("hibernate.show_sql", "true");
         //properties.put("hibernate.format_sql", "true");
         properties.put("hibernate.connection.charSet", "UTF-8");
