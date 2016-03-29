@@ -13,8 +13,7 @@
     "gumga-components": "latest",
     "requirejs": "~2.1.16",
     "animate.css": "~3.2.6",
-    "bootstrap-stylus": "~4.0.4",
-    "vanilla-masker": "latest"
+    "bootstrap-stylus": "~4.0.4"
   },
   "resolutions": {
     "angular": "1.3.15"

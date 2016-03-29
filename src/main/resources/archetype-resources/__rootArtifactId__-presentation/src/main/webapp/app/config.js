@@ -13,8 +13,7 @@ requirejs.config({
         "api-locations":"app/apiLocations",
         "gumga-components":"bower_components/gumga-components/dist/gumga.min",
         "mousetrap-latest": "bower_components/mousetrap-latest/mousetrap.min",
-        "remarkable-bootstrap-notify": "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min",
-        "vanilla-masker": "bower_components/vanilla-masker/build/vanilla-masker.min"
+        "remarkable-bootstrap-notify": "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min"
     },
     shim: {
         "angular": {exports: "angular", deps: ["jquery"]},
@@ -23,7 +22,7 @@ requirejs.config({
         "angular-mocks": {deps: ["angular"], exports: "angular-mocks"},
         "bootstrap": {deps: ["jquery"]},
         "jquery-mask": {deps: ["jquery"]},
-        "gumga-components":{deps:['angular','angular-bootstrap', 'angular-ui-router', 'jquery', 'remarkable-bootstrap-notify', 'mousetrap-latest', 'vanilla-masker'] }
+        "gumga-components":{deps:['angular','angular-bootstrap', 'angular-ui-router', 'jquery', 'remarkable-bootstrap-notify', 'mousetrap-latest'] }
 
     }
 });
