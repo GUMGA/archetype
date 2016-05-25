@@ -13,7 +13,8 @@ requirejs.config({
         "api-locations":"app/apiLocations",
         "gumga-components":"bower_components/gumga-components/dist/gumga.min",
         "mousetrap-latest": "bower_components/mousetrap-latest/mousetrap.min",
-        "remarkable-bootstrap-notify": "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min"
+        "remarkable-bootstrap-notify": "bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min",
+        "ngImgCrop": "bower_components/ng-img-crop/compile/minified/ng-img-crop"
     },
     shim: {
         "angular": {exports: "angular", deps: ["jquery"]},
@@ -22,7 +23,8 @@ requirejs.config({
         "angular-mocks": {deps: ["angular"], exports: "angular-mocks"},
         "bootstrap": {deps: ["jquery"]},
         "jquery-mask": {deps: ["jquery"]},
-        "gumga-components":{deps:['angular','angular-bootstrap', 'angular-ui-router', 'jquery', 'remarkable-bootstrap-notify', 'mousetrap-latest'] }
+        "gumga-components":{deps:['angular','angular-bootstrap', 'angular-ui-router', 'jquery', 'remarkable-bootstrap-notify', 'mousetrap-latest'] },
+        "ngImgCrop": {deps: ["angular"]}
 
     }
 });
