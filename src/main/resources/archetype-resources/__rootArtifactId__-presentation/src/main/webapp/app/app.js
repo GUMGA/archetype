@@ -2,6 +2,7 @@ define(function(require) {
   'use strict';
   require('angular');
   require('angular-ui-router');
+  require('ngImgCrop');
   require('gumga-components');
   require('app/modules/login/module');
   require('app/apiLocations');

@@ -1,9 +1,9 @@
 define(['jquery'],
     function ($) {
         'use strict';
-        LoginController.$inject = ['$scope', 'LoginService','$modal'];
+        LoginController.$inject = ['$scope', 'LoginService','$uibModal'];
 
-        function LoginController($scope, LoginService,$modal) {
+        function LoginController($scope, LoginService,$uibModal) {
             $('#emailInput').focus();
 
             LoginService.removeToken();
