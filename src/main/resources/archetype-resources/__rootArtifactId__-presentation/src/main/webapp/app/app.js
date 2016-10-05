@@ -2,6 +2,7 @@ define(function(require) {
   'use strict';
   require('angular');
   require('angular-ui-router');
+  require('angular-sanitize');
   require('ngImgCrop');
   require('gumga-components');
   require('app/modules/login/module');
@@ -11,6 +12,7 @@ define(function(require) {
   //FIMREQUIRE
   angular.module('app.core', [
     'ui.router'
+    ,'ngSanitize'
     ,'gumga.core'
     ,'app.login'
     ,'app.gumgatagdefinition'

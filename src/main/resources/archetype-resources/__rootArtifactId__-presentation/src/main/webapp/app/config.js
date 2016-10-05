@@ -6,6 +6,7 @@ requirejs.config({
         "angular-mocks": "node_modules/angular-mocks/angular-mocks",
         "angular-bootstrap": "bower_components/angular-bootstrap/ui-bootstrap-tpls.min",
         "angular-ui-router": "bower_components/angular-ui-router/release/angular-ui-router.min",
+        "angular-sanitize": "bower_components/angular-sanitize/angular-sanitize.min",
         "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min",
         "jquery": "bower_components/jquery/dist/jquery.min",
         "es5-sshim": "bower_components/es5-shim/es5-shim.min",
@@ -19,6 +20,7 @@ requirejs.config({
     shim: {
         "angular": {exports: "angular", deps: ["jquery"]},
         "angular-bootstrap": {deps: ["angular"]},
+        "angular-sanitize": {deps: ["angular"]},
         "angular-ui-router": {deps: ["angular"]},
         "angular-mocks": {deps: ["angular"], exports: "angular-mocks"},
         "bootstrap": {deps: ["jquery"]},
