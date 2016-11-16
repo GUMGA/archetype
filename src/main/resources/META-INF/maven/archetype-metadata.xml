@@ -71,6 +71,7 @@
           <directory>src/main/webapp</directory>
           <includes>
             <include>**/*.png</include>
+            <include>**/*.ico</include>
           </includes>
         </fileSet>
       </fileSets>
@@ -99,6 +100,7 @@
             <include>**/*.ttf</include>
             <include>**/*.woff</include>
             <include>**/*.woff2</include>
+            <include>**/*.ico</include>
           </includes>
         </fileSet>
       </fileSets>
