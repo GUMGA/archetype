@@ -75,8 +75,9 @@
             </plugin>
             <!-- Plugin Para gerar o diagrama toda a vez que da build    -->
                        <plugin>
-                           <groupId>br.com.gumga</groupId>
+                           <groupId>io.gumga</groupId>
                            <artifactId>gumgag</artifactId>
+			   <version>[1.3.0,)</version>
                            <executions>
                                <execution>
                                    <phase>install</phase>
