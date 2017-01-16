@@ -20,12 +20,12 @@
         </dependency>
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
-            <groupId>gumga.framework</groupId>
+            <groupId>io.gumga</groupId>
             <artifactId>gumga-application</artifactId>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>gumga.framework</groupId>
+            <groupId>io.gumga</groupId>
             <artifactId>gumga-security</artifactId>
             <type>jar</type>
         </dependency>

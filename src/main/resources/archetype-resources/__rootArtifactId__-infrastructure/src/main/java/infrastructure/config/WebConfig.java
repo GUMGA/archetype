@@ -35,11 +35,11 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
-import gumga.framework.security.GumgaRequestFilter;
+import io.gumga.security.GumgaRequestFilter;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"${package}.presentation.web", "gumga.framework"})
+@ComponentScan(basePackages = {"${package}.presentation.web", "io.gumga"})
 @Import(Application.class)
 public class WebConfig extends WebMvcConfigurerAdapter implements WebApplicationInitializer {
 

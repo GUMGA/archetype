@@ -3,11 +3,11 @@
 #set( $symbol_escape = '\' )
 package ${package}.infrastructure.config;
 
-import gumga.framework.application.GumgaRepositoryFactoryBean;
+import io.gumga.application.GumgaRepositoryFactoryBean;
 
 import java.util.Properties;
 
-import gumga.framework.domain.GumgaQueryParserProvider;
+import io.gumga.domain.GumgaQueryParserProvider;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -28,8 +28,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"${package}", "gumga.framework"})
-@EnableJpaRepositories(repositoryFactoryBeanClass = GumgaRepositoryFactoryBean.class, basePackages = {"${package}", "gumga.framework"})
+@ComponentScan(basePackages = {"${package}", "io.gumga"})
+@EnableJpaRepositories(repositoryFactoryBeanClass = GumgaRepositoryFactoryBean.class, basePackages = {"${package}", "io.gumga"})
 @EnableTransactionManagement(proxyTargetClass = true)
 public class Application {
 
@@ -83,7 +83,7 @@ public class Application {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("gumga.framework.domain","${package}");
+        factory.setPackagesToScan("io.gumga.domain","${package}");
         factory.setDataSource(dataSource);
 
         factory.setJpaProperties(properties);

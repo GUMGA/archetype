@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.infrastructure.config;
 
-import gumga.framework.core.GumgaValues;
+import io.gumga.core.GumgaValues;
 import org.springframework.stereotype.Component;
 
 @Component
