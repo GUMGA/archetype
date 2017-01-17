@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.gumga</groupId>
   <artifactId>gumga-archetype</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <packaging>maven-archetype</packaging>
   <name>gumga-archetype</name>
   <description>Project archetype for GUMGA</description>
@@ -51,16 +51,20 @@
         <url>https://github.com/GUMGA/archetype</url>
 
   </scm>
-
-  <build>
-  <extensions>
-      <extension>
-        <groupId>org.apache.maven.archetype</groupId>
-        <artifactId>archetype-packaging</artifactId>
-        <version>2.2</version>
-      </extension>
+    <build>
+    <extensions>
+        <extension>
+            <groupId>org.apache.maven.archetype</groupId>
+            <artifactId>archetype-packaging</artifactId>
+            <version>2.4</version>
+        </extension>
     </extensions>
-    <plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>maven-central</id>
+            <build>
+                <plugins>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -138,20 +142,40 @@
                             </configuration>
                         </plugin>
 
-        <plugin>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.2</version>
-        </plugin>
+                        <plugin>
+                            <artifactId>maven-archetype-plugin</artifactId>
+                            <version>2.4</version>
+                        </plugin>
                     </plugins>
                 </pluginManagement>
-  </build>
+            </build>
 
-  <distributionManagement>
-      <repository>
-          <id>nexus-releases</id>
-          <name>Nexus Release Repository</name>
-          <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      </repository>
-  </distributionManagement>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases</id>
+                    <name>Nexus Release Repository</name>
+                    <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+
+        </profile>
+        <profile>
+            <id>default</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-resources-plugin</artifactId>
+                            <version>3.0.2</version>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-archetype-plugin</artifactId>
+                            <version>2.4</version>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
