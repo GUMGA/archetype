@@ -45,6 +45,12 @@
                 <artifactId>${rootArtifactId}-presentation</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${rootArtifactId}-boot</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- DEPENDENCIAS do Framework GUMGA    -->
             <dependency>
                 <groupId>io.gumga</groupId>
