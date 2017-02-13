@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.${parentArtifactId}.seed;
 
-import gumga.framework.domain.seed.AppSeed;
+import io.gumga.domain.seed.AppSeed;
 
 import java.io.IOException;
 import java.util.LinkedList;

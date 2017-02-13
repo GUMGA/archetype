@@ -10,6 +10,14 @@
         <include>gitignore</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true">
+      <directory></directory>
+      <includes>
+        <include>__rootArtifactId__.properties</include>
+        <include>mudar_para_.gitignore</include>
+      </includes>
+
+    </fileSet>
   </fileSets>
   <modules>
     <module id="${rootArtifactId}-domain" dir="__rootArtifactId__-domain" name="${rootArtifactId}-domain">

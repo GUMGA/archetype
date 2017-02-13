@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.${parentArtifactId}.api;
 
-import gumga.framework.security.ApiOperationTranslator;
+import io.gumga.security.ApiOperationTranslator;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Component;
