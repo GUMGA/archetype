@@ -1,19 +1,19 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.infrastructure.config;
+package ${package}.${parentArtifactId}.boot.components;
 
 import io.gumga.core.GumgaValues;
 import org.springframework.stereotype.Component;
 import java.util.Properties;
 
 @Component
-public class ApplicationConstants implements GumgaValues {
+public class SpringBootApplicationConstants implements GumgaValues {
 
-    private static final String DEFAULT_SECURITY_URL = "http://localhost";
+    private static final String DEFAULT_SECURITY_URL = "http://gumga.io";
     private Properties properties;
 
-    public ApplicationConstants() {
+    public SpringBootApplicationConstants() {
         this.properties = getCustomFileProperties();
     }
 
@@ -24,7 +24,7 @@ public class ApplicationConstants implements GumgaValues {
 
     @Override
     public boolean isLogActive() {
-        return true;
+        return Boolean.valueOf(properties.getProperty("gumgalog.ativo", "true"));
     }
 
     @Override

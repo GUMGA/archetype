@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <dependencies>
         <!-- DEPENDENCIAS de Módulos    -->
         <dependency>
@@ -24,7 +24,7 @@
         </dependency>
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
-            <groupId>gumga.framework</groupId>
+            <groupId>io.gumga</groupId>
             <artifactId>gumga-domain</artifactId>
         </dependency>
         <!-- DEPENDENCIAS em geral-->
@@ -34,13 +34,13 @@
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
-                <version>1.5.3</version>             
+                <version>1.5.3</version>
                 <executions>
                     <execution>
                         <phase>compile</phase>
                         <goals>
                             <goal>replace</goal>
-                        </goals>                    
+                        </goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -65,6 +65,20 @@
                     <!-- Depois, ignorar todos os arquivos JavaScript e CSS pois eles serão copiados pelo requirejs-maven-plugin -->
                     <!-- <warSourceExcludes>**/*.js,**/*.css</warSourceExcludes> -->
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>make-a-war</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

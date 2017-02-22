@@ -19,7 +19,7 @@
     <dependencies>
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
-            <groupId>gumga.framework</groupId>
+            <groupId>io.gumga</groupId>
             <artifactId>gumga-domain</artifactId>
             <type>jar</type>
         </dependency>
@@ -75,7 +75,7 @@
             </plugin>
             <!-- Plugin Para gerar o diagrama toda a vez que da build    -->
                        <plugin>
-                           <groupId>br.com.gumga</groupId>
+                           <groupId>io.gumga</groupId>
                            <artifactId>gumgag</artifactId>
                            <executions>
                                <execution>

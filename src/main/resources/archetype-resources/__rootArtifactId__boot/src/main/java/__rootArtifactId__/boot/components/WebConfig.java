@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.infrastructure.config;
+package ${package}.${parentArtifactId}.boot.components;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -35,13 +35,17 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
+import io.gumga.presentation.CorsFilter;
 import io.gumga.security.GumgaRequestFilter;
+import org.springframework.boot.context.embedded.FilterRegistrationBean;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = {"${package}.presentation.web", "io.gumga"})
-@Import(Application.class)
 public class WebConfig extends WebMvcConfigurerAdapter implements WebApplicationInitializer {
+
+    public WebConfig() {
+        System.out.println("----------------------> WebConfig");
+    }
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -49,6 +53,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
     }
 
     private MappingJackson2HttpMessageConverter jacksonConverter() {
+        System.out.println("----------------------> JacksonConverter");
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new Hibernate4Module());
         mapper.registerModule(new JodaModule());
@@ -82,18 +87,6 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
     }
 
     @Bean
-    public static MethodValidationPostProcessor methodValidationPostProcessor(LocalValidatorFactoryBean validator) {
-        final MethodValidationPostProcessor methodValidationPostProcessor = new MethodValidationPostProcessor();
-        methodValidationPostProcessor.setValidator(validator);
-        return methodValidationPostProcessor;
-    }
-
-    @Bean
-    public static LocalValidatorFactoryBean validator() {
-        return new LocalValidatorFactoryBean();
-    }
-
-    @Bean
     public static CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setMaxUploadSize(1024 * 1024 * 1024);
@@ -102,13 +95,39 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
 
     @Bean
     public GumgaRequestFilter gumgaRequestFilter() {
-        return new GumgaRequestFilter("${package}.${parentArtifactId}");
+        return new GumgaRequestFilter("br.com.empresa.erp");
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //Para utilizar o Segurança você precisa descomentar a linha abaixo.
-        //registry.addInterceptor(gumgaRequestFilter());
+        registry.addInterceptor(gumgaRequestFilter());
+    }
+
+    @Bean
+    public CorsFilter getCorsFilter() {
+        return new CorsFilter();
+    }
+
+    @Bean
+    public FilterRegistrationBean someFilterRegistration() {
+        System.out.println("----------------------> CorsFilter");
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setFilter(getCorsFilter());
+        registration.addUrlPatterns("/*");
+        registration.setName("CorsFilter");
+        registration.setOrder(1);
+        registration.setAsyncSupported(true);
+        return registration;
+    }
+
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
+        "classpath:/public/**"
+    };
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
     }
 
 }
