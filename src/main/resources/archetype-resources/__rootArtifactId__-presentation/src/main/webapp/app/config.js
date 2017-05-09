@@ -20,6 +20,7 @@ requirejs.config({
         'gumga-login': 'bower_components/gumga-login/dist/gumga-login.min',
         'locale': 'i18n/angular-locale_pt-br',
         'angular-input-masks': 'bower_components/angular-input-masks/angular-input-masks.min',
+        'moment-timezone': 'bower_components/moment-timezone/builds/moment-timezone-with-data.min',
 
         "gumga-rest-ng": "bower_components/gumga-rest-ng/dist/gumga-rest.min",
         "gumga-controller-ng": "bower_components/gumga-controller-ng/dist/gumga-controller.min",
@@ -41,7 +42,9 @@ requirejs.config({
         "gumga-form-ng": "bower_components/gumga-form-ng/dist/gumga-form.min",
         "gumga-generic-filter-ng": "bower_components/gumga-generic-filter-ng/dist/gumga-generic-filter.min",
         "gumga-query-filter-ng": "bower_components/gumga-query-filter-ng/dist/gumga-query-filter.min",
-        "gumga-list-ng": "bower_components/gumga-list-ng/dist/gumga-list.min"
+        "gumga-list-ng": "bower_components/gumga-list-ng/dist/gumga-list.min",
+        "gumga-date-ng": "bower_components/gumga-date-ng/dist/gumga-date.min",
+        "gumga-query-action-ng": "bower_components/gumga-query-action-ng/dist/gumga-query-action.min"
     },
     shim: {
         'angular': { exports: 'angular', deps: ['jquery'] },
@@ -79,7 +82,9 @@ requirejs.config({
         'gumga-form-ng': { deps: ['angular'] },
         'gumga-generic-filter-ng': { deps: ['angular'] },
         'gumga-query-filter-ng': { deps: ['angular'] },
-        'gumga-list-ng': { deps: ['angular'] }
+        'gumga-list-ng': { deps: ['angular'] },
+        'gumga-date-ng': { deps: ['angular', 'moment', 'locale', 'moment-timezone'] },
+        'gumga-query-action-ng': { deps: ['angular'] },
 
     },
     config: {

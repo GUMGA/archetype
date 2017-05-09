@@ -9,6 +9,24 @@ define([], function() {
 
     $scope.gumgacustomfield.execute('get');
 
+      $scope.actions = [
+          { key: 'option1', label: 'option1' },
+          { key: 'option2', label: 'option2' }
+      ]
+
+      $scope.search = function(field, param) {
+          $scope.query = { searchFields: [field], q: param }
+          $scope.gumgacustomfield.methods.search(field,param)
+      }
+
+      $scope.advancedSearch = function(param) {
+          $scope.gumgacustomfield.methods.advancedSearch(param)
+      }
+
+      $scope.action = function(queryaction) {
+          console.log(queryaction);
+      }
+
     $scope.tableConfig = {
       columns: 'clazz,button',
       checkbox: true,

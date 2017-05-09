@@ -32,6 +32,8 @@ define(function(require) {
   require('gumga-query-filter-ng');
   require('gumga-generic-filter-ng');
   require('gumga-list-ng');
+  require('gumga-date-ng');
+  require('gumga-query-action-ng');
 
   require('app/apiLocations');
   require('app/modules/login/module');
@@ -63,7 +65,9 @@ define(function(require) {
         'gumga.genericfilter',
         'gumga.list',
         'gumga.login',
-        'gumga.layout'
+        'gumga.layout',
+        'gumga.date',
+        'gumga.queryaction'
     ]);
 
   angular.module('app.core', [
