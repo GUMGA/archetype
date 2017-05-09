@@ -45,7 +45,22 @@
             </gumga-query>
           </div>
         </div>
+
         <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <gumga-query-action
+                    entity="gumgatagdefinition"
+                    selected="selectedValues"
+                    query="query"
+                    beyond="beyond"
+                    actions="actions"
+                    on-action="action(queryaction)">
+            </gumga-query-action>
+          </div>
+        </div>
+        <br>
+
         <div class="row">
           <div class="col-md-12">
             <gumga-list

@@ -42,7 +42,9 @@
     "gumga-form-ng": "*",
     "gumga-query-filter-ng": "*",
     "gumga-generic-filter-ng": "*",
-    "gumga-list-ng": "*"
+    "gumga-list-ng": "*",
+    "gumga-date-ng": "*",
+    "gumga-query-action-ng": "*"
   },
   "resolutions": {
     "angular": "1.5.8",
