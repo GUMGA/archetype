@@ -7,7 +7,7 @@ define(['app/apiLocations'], function (APILocation) {
         vm.loginGumga = function (login) {
             LoginService.loginGumga(login)
                 .then(function (response) {
-                    $state.go('welcome');
+                    $state.go('welcome.home');
                 }, function (error) {
                     // console.error(error);
                 })
@@ -17,7 +17,7 @@ define(['app/apiLocations'], function (APILocation) {
             LoginService.createTokenWithFacebook(login.user.email, login.authResponse.accessToken)
                 .then(function (tokenSecurity) {
                     if (!tokenSecurity.data.response) {
-                        $state.go('welcome');
+                        $state.go('welcome.home');
                     } else {
                         showMessagesFacebook(tokenSecurity.data.response)
                     }
@@ -51,7 +51,7 @@ define(['app/apiLocations'], function (APILocation) {
             LoginService.createTokenWithGooglePlus(login.user.email, login.authResponse.access_token)
                 .then(function (tokenSecurity) {
                     if (!tokenSecurity.data.response) {
-                        $state.go('welcome');
+                        $state.go('welcome.home');
                     } else {
                         showMessagesGooglePlus(tokenSecurity.data.response)
                     }
@@ -64,7 +64,7 @@ define(['app/apiLocations'], function (APILocation) {
         };
 
         vm.onLogin = function(user, organizations) {
-            redirectPresentation(user)
+            $state.go('welcome.home');
         }
 
     }

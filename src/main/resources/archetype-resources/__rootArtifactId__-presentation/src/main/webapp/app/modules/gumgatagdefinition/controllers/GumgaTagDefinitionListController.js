@@ -9,6 +9,10 @@ define([], function () {
 
         $scope.gumgatagdefinition.execute('get');
 
+        $scope.gumgatagdefinition.on('deleteSuccess', function() {
+            $scope.gumgatagdefinition.execute('get');
+        });
+
         $scope.actions = [
             { key: 'option1', label: 'option1' },
             { key: 'option2', label: 'option2' }
@@ -30,6 +34,7 @@ define([], function () {
         $scope.tableConfig = {
             columns: 'name,button',
             checkbox: true,
+            selection: 'multi',
             columnsConfig: [{
                     name: 'name',
                     title: '<span gumga-translate-tag="gumgatagdefinition.name">name</span>',
