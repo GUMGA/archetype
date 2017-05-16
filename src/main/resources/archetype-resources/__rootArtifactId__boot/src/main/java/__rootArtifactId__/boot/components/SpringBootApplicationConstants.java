@@ -24,12 +24,12 @@ public class SpringBootApplicationConstants implements GumgaValues {
 
     @Override
     public boolean isLogActive() {
-        return true;
+        return Boolean.valueOf(this.properties.getProperty("gumgalog.ativo", "true"));
     }
 
     @Override
     public String getCustomPropertiesFileName() {
-        return "erp.properties";
+        return "${parentArtifactId}.properties";
     }
 
 }

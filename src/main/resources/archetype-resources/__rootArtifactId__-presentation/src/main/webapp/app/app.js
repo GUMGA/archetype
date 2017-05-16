@@ -40,6 +40,7 @@ define(function(require) {
   require('app/modules/common/module');
   require('app/modules/gumgatagdefinition/module');
   require('app/modules/gumgacustomfield/module');
+  require('app/modules/welcome/module');
   //FIMREQUIRE
 
   angular.module('gumga.core', [
@@ -79,6 +80,7 @@ define(function(require) {
     ,'app.base'
     ,'app.gumgatagdefinition'
     ,'app.gumgacustomfield'
+    ,'app.welcome'
   //FIMINJECTIONS
     ])
     .config(function($stateProvider, $urlRouterProvider, $httpProvider, $injector) {
@@ -138,7 +140,7 @@ define(function(require) {
         $httpProvider.interceptors.push(function ($q, $injector, $timeout, $filter) {
             return {
                 'request': function (config) {
-                    config.headers['gumgaToken'] = window.sessionStorage.getItem('token') || 0
+                    config.headers['gumgaToken'] = window.sessionStorage.getItem('user') ? JSON.parse(window.sessionStorage.getItem('user')).token : 0
                     return config
                 },
                 'responseError': function (rejection) {

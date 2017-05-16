@@ -24,12 +24,17 @@ public class ApplicationConstants implements GumgaValues {
 
     @Override
     public boolean isLogActive() {
-        return true;
+        return Boolean.valueOf(this.properties.getProperty("gumgalog.ativo", "true"));
     }
 
     @Override
     public String getCustomPropertiesFileName() {
         return "${parentArtifactId}.properties";
+    }
+
+    @Override
+    public String getSoftwareName() {
+        return "${package}.${parentArtifactId}";
     }
 
 }

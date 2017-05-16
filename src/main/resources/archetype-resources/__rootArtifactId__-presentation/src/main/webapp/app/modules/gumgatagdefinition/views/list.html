@@ -49,29 +49,17 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <gumga-list sort="gumgatagdefinition.methods.sort(field, dir)"
-                                    class="table-striped table-condensed"
+                        <gumga-list class="table-striped table-condensed"
+                                    sort="gumgatagdefinition.methods.sort(field, dir)"
                                     data="gumgatagdefinition.data"
-                                    configuration="tableConfig">
+                                    configuration="tableConfig"
+                                    page-size="gumgatagdefinition.pageSize"
+                                    page-position="bottom"
+                                    page-align="flex-end"
+                                    count="gumgatagdefinition.count"
+                                    page-model="page"
+                                    on-page-change="gumgatagdefinition.methods.get(page, pageSize)">
                         </gumga-list>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul uib-pagination
-                            class="pagination gmd"
-                            ng-model="page"
-                            max-size="10"
-                            boundary-links="true"
-                            previous-text="‹"
-                            next-Text="›"
-                            first-text="«"
-                            last-text="»"
-                            items-per-page="gumgatagdefinition.pageSize"
-                            total-items="gumgatagdefinition.count"
-                            ng-change="gumgatagdefinition.methods.get(page)">
-                        </ul>
                     </div>
                 </div>
             </div>
