@@ -35,6 +35,8 @@ define([], function() {
       columns: 'clazz,button',
       checkbox: true,
       selection: 'multi',
+      materialTheme: true,
+      itemsPerPage: [5, 10, 15, 30],
       columnsConfig: [{
         name: 'clazz',
         title: '<span gumga-translate-tag="gumgacustomfield.clazz">clazz</span>',

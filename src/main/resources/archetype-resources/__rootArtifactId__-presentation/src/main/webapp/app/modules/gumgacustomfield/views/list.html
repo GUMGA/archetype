@@ -63,33 +63,19 @@
 
         <div class="row">
           <div class="col-md-12">
-            <gumga-list
-                    sort="gumgacustomfield.methods.sort(field, dir)"
-                    class="table-striped table-condensed"
-                    data="gumgacustomfield.data"
-                    configuration="tableConfig">
+            <gumga-list class="table-striped table-condensed"
+                        sort="gumgacustomfield.methods.sort(field, dir)"
+                        data="gumgacustomfield.data"
+                        configuration="tableConfig"
+                        page-size="gumgacustomfield.pageSize"
+                        page-position="bottom"
+                        page-align="flex-end"
+                        count="gumgacustomfield.count"
+                        page-model="page"
+                        on-page-change="gumgacustomfield.methods.get(page, pageSize)">
             </gumga-list>
           </div>
         </div>
-
-        <section class="row">
-          <div class="col-md-12">
-            <ul uib-pagination
-                class="pagination gmd"
-                ng-model="page"
-                max-size="10"
-                boundary-links="true"
-                previous-text="‹"
-                next-Text="›"
-                first-text="«"
-                last-text="»"
-                items-per-page="gumgacustomfield.pageSize"
-                total-items="gumgacustomfield.count"
-                ng-change="gumgacustomfield.methods.get(page)">
-            </ul>
-          </div>
-        </section>
-
       </div>
     </div>
   </div>

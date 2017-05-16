@@ -35,6 +35,8 @@ define([], function () {
             columns: 'name,button',
             checkbox: true,
             selection: 'multi',
+            materialTheme: true,
+            itemsPerPage: [5, 10, 15, 30],
             columnsConfig: [{
                     name: 'name',
                     title: '<span gumga-translate-tag="gumgatagdefinition.name">name</span>',
