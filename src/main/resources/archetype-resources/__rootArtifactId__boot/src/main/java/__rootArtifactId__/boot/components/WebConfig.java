@@ -36,7 +36,7 @@ import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import io.gumga.presentation.CorsFilter;
-import io.gumga.security.GumgaRequestFilter;
+import io.gumga.security_v2.GumgaRequestFilterV2;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
@@ -94,8 +94,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
     }
 
     @Bean
-    public GumgaRequestFilter gumgaRequestFilter() {
-        return new GumgaRequestFilter("br.com.empresa.erp");
+    public GumgaRequestFilterV2 gumgaRequestFilter() {
+        return new GumgaRequestFilterV2("br.com.empresa.erp");
     }
 
     @Override

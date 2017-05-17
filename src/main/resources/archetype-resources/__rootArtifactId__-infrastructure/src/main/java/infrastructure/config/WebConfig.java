@@ -35,7 +35,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
-import io.gumga.security.GumgaRequestFilter;
+import io.gumga.security_v2.GumgaRequestFilterV2;
 
 @Configuration
 @EnableWebMvc
@@ -101,8 +101,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebApplication
     }
 
     @Bean
-    public GumgaRequestFilter gumgaRequestFilter() {
-        return new GumgaRequestFilter("${package}.${parentArtifactId}");
+    public GumgaRequestFilterV2 gumgaRequestFilter() {
+        return new GumgaRequestFilterV2("${package}.${parentArtifactId}");
     }
 
     @Override
