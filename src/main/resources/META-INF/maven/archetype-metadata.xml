@@ -133,6 +133,41 @@
             </fileSets>
         </module>
 
+        <module id="${rootArtifactId}-presentation-webpack" dir="__rootArtifactId__-presentation-webpack"
+                name="${rootArtifactId}-presentation-webpack">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/webapp</directory>
+                    <includes>
+                        <include>**/*.html</include>
+                        <include>**/*.json</include>
+                        <include>**/*.xml</include>
+                        <include>**/apiLocations.js</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/webapp</directory>
+                    <includes>
+                        <include>.babelrc</include>
+                        <include>.jshintrc.json</include>
+                        <include>.jshintrc</include>
+                        <include>**/.gitignore</include>
+                        <include>**/*.styl</include>
+                        <include>**/*.png</include>
+                        <include>**/*.css</include>
+                        <include>**/*.gif</include>
+                        <include>**/*.svg</include>
+                        <include>**/*.js</include>
+                        <include>**/*.ttf</include>
+                        <include>**/*.eot</include>
+                        <include>**/*.woff</include>
+                        <include>**/*.woff2</include>
+                        <include>**/*.ico</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
         <module id="${rootArtifactId}-boot" dir="__rootArtifactId__-boot" name="${rootArtifactId}-boot">
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">
