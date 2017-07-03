@@ -28,7 +28,8 @@ angular.module('gumga.core', [
       'gumga.login',
       'gumga.layout',
       'gumga.date',
-      'gumga.queryaction'
+      'gumga.queryaction',
+      'gumga.myAccountEmbedded'
   ]);
 
 angular.module('app.core', [
@@ -38,13 +39,19 @@ angular.module('app.core', [
   ,'gumga.core'
   ,'app.login'
   ,'app.base'
+  ,'app.account'
   ,'app.gumgatagdefinition'
   ,'app.gumgacustomfield'
   ,'app.welcome'
   ])
-  .config(function($stateProvider, $urlRouterProvider, $httpProvider, $injector) {
+  .run(['$rootScope', '$timeout', function($rootScope, $timeout){
+    $rootScope.$watch(() => {
+      setTimeout(() => angular.element('a[href]').attr('target', '_self'), 0);
+    });
+  }])
+  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$injector', function($stateProvider, $urlRouterProvider, $httpProvider, $injector) {
 
-  var template = [
+   var template = [
       '<gumga-nav></gumga-nav>',
       '<gumga-menu menu-url="gumga-menu.json" keys-url="keys.json" image="./resources/images/gumga.png"></gumga-menu>',
       'oi<div class="gumga-container">',
@@ -62,6 +69,10 @@ angular.module('app.core', [
           id: 0
         },
         template: '<div ui-view></div>'
+      })
+      .state('account', {
+        url: '/account',
+        templateUrl: tempĺateBase
       })
       .state('welcome', {
         url: '/welcome',
@@ -105,6 +116,10 @@ angular.module('app.core', [
               'responseError': function (rejection) {
                   var $state = $injector.get('$state')
                   var GumgaAlert = $injector.get('GumgaAlert')
+                  if(rejection.status == 404){
+                    GumgaAlert.createDangerMessage("404", "Verifique se o endereço foi digitado corretamente.");
+                    return;
+                  }
                   var error = {
                       title: rejection.data.response || rejection.data.code,
                       message: rejection.data.response ? rejection.statusText : rejection.data.details,
@@ -125,4 +140,4 @@ angular.module('app.core', [
               }
           }
       })
-  })
+  }])
