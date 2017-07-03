@@ -32,7 +32,12 @@ module.exports = {
             cssProcessorOptions: { discardComments: {removeAll: true } },
             canPrint: true
         }),
-        new webpack.IgnorePlugin(/\.\/locale$/)
+        new webpack.IgnorePlugin(/\.\/locale$/),
+        new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery",
+           "window.jQuery": "jquery"
+       })
     ],
     module: {
         rules: [

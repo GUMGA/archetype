@@ -60,7 +60,12 @@ module.exports = function(config) {
               cssProcessor: require('cssnano'),
               cssProcessorOptions: { discardComments: {removeAll: true } },
               canPrint: true
-          })
+          }),
+          new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery",
+           "window.jQuery": "jquery"
+       })
       ],
       module: {
           rules: [

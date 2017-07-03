@@ -55,6 +55,7 @@
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "mousetrap": "^1.6.1",
+    "my-account-embedded": "^1.1.1",
     "ng-img-crop": "^0.2.0"
   },
   "devDependencies": {

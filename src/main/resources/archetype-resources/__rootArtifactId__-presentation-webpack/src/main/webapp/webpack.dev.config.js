@@ -19,7 +19,12 @@ module.exports = {
             filename: "app-dev.css",
             allChunks: true
         }),
-        new webpack.IgnorePlugin(/\.\/locale$/)
+        new webpack.IgnorePlugin(/\.\/locale$/),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
     ],
     module: {
         rules: [
