@@ -43,6 +43,7 @@ angular.module('app.core', [
   ,'app.gumgatagdefinition'
   ,'app.gumgacustomfield'
   ,'app.welcome'
+  //FIMINJECTIONS
   ])
   .run(['$rootScope', '$timeout', function($rootScope, $timeout){
     $rootScope.$watch(() => {
