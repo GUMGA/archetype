@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 {
   "name": "${parentArtifactId}",
-  "version": "${version}",
+  "version": "0.1.0",
   "description": "${parentArtifactId}",
   "main": "app/app.js",
   "scripts": {
