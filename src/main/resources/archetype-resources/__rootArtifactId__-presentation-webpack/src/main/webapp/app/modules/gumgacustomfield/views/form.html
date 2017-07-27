@@ -46,7 +46,14 @@
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.visualizationOrder">visualizationOrder</label>
               </gmd-input>
             </div>
-            <div class="col-md-2 col-md-offset-8">
+            <div class="col-md-2">
+              <gmd-input>
+                <input class="form-control gmd" type="number" gumga-error name="gumgacustomfield_data_colSize" ng-model="gumgacustomfield.data.colSize"/>
+                <span class="bar"></span>
+                <label class="control-label" gumga-translate-tag="gumgacustomfield.colSize">colSize</label>
+              </gmd-input>
+            </div>
+            <div class="col-md-2 col-md-offset-6">
               <button type="button" class="btn btn-block" ng-class="{'gmd raised btn-success': gumgacustomfield.data.active, 'gmd raised btn-default': !gumgacustomfield.data.active}" name="active" ng-model="gumgacustomfield.data.active" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
                 <span ng-show="gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.active">Active</span>
                 <span ng-show="!gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.inactive">Inactive</span>
