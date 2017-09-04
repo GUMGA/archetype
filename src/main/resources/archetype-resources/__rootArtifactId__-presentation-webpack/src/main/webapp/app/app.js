@@ -115,8 +115,11 @@ angular.module('app.core', [
                   return config
               },
               'responseError': function (rejection) {
-                  var $state = $injector.get('$state')
-                  var GumgaAlert = $injector.get('GumgaAlert')
+                  var $state = $injector.get('$state');
+                  var GumgaAlert = $injector.get('GumgaAlert');
+                  if(!sessionStorage.getItem('token')){
+                     $state.go('login.log')
+                  }
                   if(rejection.status == 404){
                     GumgaAlert.createDangerMessage("404", "Verifique se o endereço foi digitado corretamente.");
                     return;
