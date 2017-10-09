@@ -129,6 +129,10 @@ angular.module('app.core', [
                   if (error.title === 'NO_USER' || error.title === 'BAD_PASSWORD') {
                       error.message = 'Usuario ou senha está incorreto!'
                   }
+                  if(rejection.data.response == 'NO_TOKEN') {
+                      sessionStorage.clear();
+                      localStorage.clear();
+                  }
                   if (error.title === 'OPERATION_NOT_ALLOWED') {
                       error.message = rejection.data.operation
                   }
