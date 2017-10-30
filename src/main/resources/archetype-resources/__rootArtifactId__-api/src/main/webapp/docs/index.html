@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +25,7 @@
   <script src='lib/swagger-oauth.js' type='text/javascript'></script>
 
   <script type="text/javascript">
-    $(function () {
+    ${symbol_dollar}(function () {
       var url = window.location.search.match(/url=([^&]+)/);
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
@@ -42,7 +45,7 @@
             });
           }
 
-          $('pre code').each(function(i, e) {
+          ${symbol_dollar}('pre code').each(function(i, e) {
             hljs.highlightBlock(e)
           });
 
@@ -56,7 +59,7 @@
       });
 
       function addApiKeyAuthorization(){
-        var key = encodeURIComponent($('#input_apiKey')[0].value);
+        var key = encodeURIComponent(${symbol_dollar}('${symbol_pound}input_apiKey')[0].value);
         if(key && key.trim() !== "") {
             var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
             window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
@@ -64,12 +67,12 @@
         }
       }
 
-      $('#input_apiKey').change(addApiKeyAuthorization);
+      ${symbol_dollar}('${symbol_pound}input_apiKey').change(addApiKeyAuthorization);
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
       /*
         var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
+        ${symbol_dollar}('${symbol_pound}input_apiKey').val(apiKey);
       */
 
       window.swaggerUi.load();
@@ -86,11 +89,11 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="#">swagger</a>
+    <a id="logo" href="${symbol_pound}">swagger</a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
       <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
-      <div class='input'><a id="explore" href="#">Explore</a></div>
+      <div class='input'><a id="explore" href="${symbol_pound}">Explore</a></div>
     </form>
   </div>
 </div>

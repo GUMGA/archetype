@@ -6,79 +6,135 @@
         <artifactId>${rootArtifactId}</artifactId>
         <version>${version}</version>
     </parent>
+
     <artifactId>${artifactId}</artifactId>
     <name>${artifactId}</name>
+    <packaging>war</packaging>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>dd/MM/yyyy HH:mm</maven.build.timestamp.format>
+
     </properties>
-    <packaging>jar</packaging>
+
     <dependencies>
         <!-- DEPENDENCIAS de Módulos    -->
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-application</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>${rootArtifactId}-gateway</artifactId>
+            <type>jar</type>
         </dependency>
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
             <groupId>io.gumga</groupId>
             <artifactId>gumga-domain</artifactId>
+            <type>jar</type>
         </dependency>
         <!-- DEPENDENCIAS em geral-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
+        <finalName>${artifactId}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <useCache>true</useCache>
+                    <warName>${${artifactId}}</warName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-war</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>exploded</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>make-a-jar</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <packaging>jar</packaging>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <groupId>${project.parent.groupId}</groupId>
+                            <version>${project.parent.version}</version>
+                            <file>${project.build.directory}/${project.artifactId}.jar</file>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                            <url>${project.distributionManagement.repository.url}</url>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <groupId>${project.parent.groupId}</groupId>
+                            <version>${project.parent.version}</version>
+                            <file>${project.build.directory}/${project.artifactId}.jar</file>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
                 <version>1.5.3</version>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <phase>prepare-package</phase>
                         <goals>
                             <goal>replace</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <ignoreMissingFile>false</ignoreMissingFile>
-                    <file>${basedir}/src/main/webapp/index_src.html</file>
-                    <outputFile>${basedir}/src/main/webapp/index.html</outputFile>
-                    <regex>false</regex>
+                    <file>${project.build.directory}/${project.build.finalName}/index.html</file>
                     <replacements>
                         <replacement>
-                            <token>%PROJECT_VERSION%</token>
-                            <value>${project.version}</value>
+                            <token>(Versão)</token>
+                            <value>Versão ${project.version} - ${maven.build.timestamp}</value>
                         </replacement>
                     </replacements>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <warName>${artifactId}</warName>
-                    <!-- Depois, ignorar todos os arquivos JavaScript e CSS pois eles serão copiados pelo requirejs-maven-plugin -->
-                    <!-- <warSourceExcludes>**/*.js,**/*.css</warSourceExcludes> -->
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>make-a-war</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>war</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

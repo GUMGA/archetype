@@ -6,12 +6,15 @@
         <artifactId>${rootArtifactId}</artifactId>
         <version>${version}</version>
     </parent>
-    <artifactId>${artifactId}</artifactId> 
+
+    <artifactId>${artifactId}</artifactId>
     <name>${artifactId}</name>
+    <packaging>jar</packaging>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <packaging>jar</packaging>
+
     <dependencies>
         <!-- DEPENDENCIAS de Módulos    -->
         <dependency>

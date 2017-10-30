@@ -29,6 +29,34 @@
                         <include>**/*.java</include>
                     </includes>
                 </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-configuration" dir="__rootArtifactId__-configuration" name="${rootArtifactId}-configuration">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </fileSet>
             </fileSets>
         </module>
         <module id="${rootArtifactId}-infrastructure" dir="__rootArtifactId__-infrastructure"
@@ -36,6 +64,12 @@
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">
                     <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
                     <includes>
                         <include>**/*.java</include>
                     </includes>
@@ -51,6 +85,12 @@
                         <include>**/*.java</include>
                     </includes>
                 </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
             </fileSets>
         </module>
         <module id="${rootArtifactId}-gateway" dir="__rootArtifactId__-gateway" name="${rootArtifactId}-gateway">
@@ -61,12 +101,24 @@
                         <include>**/*.java</include>
                     </includes>
                 </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
             </fileSets>
         </module>
         <module id="${rootArtifactId}-api" dir="__rootArtifactId__-api" name="${rootArtifactId}-api">
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">
                     <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
                     <includes>
                         <include>**/*.java</include>
                     </includes>
@@ -102,6 +154,47 @@
                 </fileSet>
             </fileSets>
         </module>
+        <module id="${rootArtifactId}-boot" dir="__rootArtifactId__-boot" name="${rootArtifactId}-boot">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                        <include>**/*.html</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.png</include>
+                        <include>**/*.ico</include>
+                        <include>**/*.gif</include>
+                        <include>**/*.css</include>
+                        <include>**/*.eot</include>
+                        <include>**/*.svg</include>
+                        <include>**/*.ttf</include>
+                        <include>**/*.woff</include>
+                        <include>**/*.woff2</include>
+                        <include>**/*.js</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
         <module id="${rootArtifactId}-presentation" dir="__rootArtifactId__-presentation"
                 name="${rootArtifactId}-presentation">
             <fileSets>
@@ -163,41 +256,6 @@
                         <include>**/*.woff</include>
                         <include>**/*.woff2</include>
                         <include>**/*.ico</include>
-                    </includes>
-                </fileSet>
-            </fileSets>
-        </module>
-
-        <module id="${rootArtifactId}-boot" dir="__rootArtifactId__-boot" name="${rootArtifactId}-boot">
-            <fileSets>
-                <fileSet filtered="true" packaged="true" encoding="UTF-8">
-                    <directory>src/main/java</directory>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
-                </fileSet>
-
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.xml</include>
-                        <include>**/*.html</include>
-                    </includes>
-                </fileSet>
-
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.png</include>
-                        <include>**/*.ico</include>
-                        <include>**/*.gif</include>
-                        <include>**/*.css</include>
-                        <include>**/*.eot</include>
-                        <include>**/*.svg</include>
-                        <include>**/*.ttf</include>
-                        <include>**/*.woff</include>
-                        <include>**/*.woff2</include>
-                        <include>**/*.js</include>
                     </includes>
                 </fileSet>
             </fileSets>

@@ -6,15 +6,19 @@
         <artifactId>${rootArtifactId}</artifactId>
         <version>${version}</version>
     </parent>
+
     <artifactId>${artifactId}</artifactId>
     <name>${artifactId}</name>
+    <packaging>war</packaging>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <packaging>war</packaging>
+
 
     <dependencies>
-        <dependency> <!--Deixar aqui enquanto está usando o gerador, depois retirar para obter um war bem menor-->
+        <dependency>
+            <!--Deixar aqui enquanto está usando o gerador, depois retirar para obter um war bem menor-->
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-domain</artifactId>
         </dependency>

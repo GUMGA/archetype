@@ -6,27 +6,43 @@
         <artifactId>${rootArtifactId}</artifactId>
         <version>${version}</version>
     </parent>
+
     <artifactId>${artifactId}</artifactId>
     <name>${artifactId}</name>
+    <packaging>jar</packaging>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <packaging>jar</packaging>
+
     <dependencies>
         <!-- DEPENDENCIAS de Módulos    -->
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-domain</artifactId>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-gateway</artifactId>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-infrastructure</artifactId>
+            <type>jar</type>
         </dependency>
+
+
         <!-- DEPENDENCIAS do Framework GUMGA    -->
         <dependency>
             <groupId>io.gumga</groupId>
             <artifactId>gumga-domain</artifactId>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>io.gumga</groupId>
+            <artifactId>gumga-presentation</artifactId>
         </dependency>
     </dependencies>
 </project>
