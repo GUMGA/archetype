@@ -1,2 +1,2 @@
 server:
-  context-path: /dashboard-api
+  context-path: /${parentArtifactId}-api

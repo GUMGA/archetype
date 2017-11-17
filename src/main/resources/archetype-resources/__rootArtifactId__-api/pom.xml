@@ -47,7 +47,7 @@
                 <version>2.6</version>
                 <configuration>
                     <useCache>true</useCache>
-                    <warName>${${artifactId}}</warName>
+                    <warName>${artifactId}</warName>
                 </configuration>
                 <executions>
                     <execution>
