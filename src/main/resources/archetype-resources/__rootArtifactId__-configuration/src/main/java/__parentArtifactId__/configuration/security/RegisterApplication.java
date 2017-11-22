@@ -9,6 +9,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import java.util.*;
 
@@ -68,6 +72,18 @@ public class RegisterApplication {
             software.put("url", value);
             software.put("softwareValues", new ArrayList<>());
             map = securityIntegration.createSoftware(headers, software);
+        } else {
+            securityIntegration.checkOperationsSoftware(headers, (String) map.get("name"), SecurityIntegration.getOperations().stream()
+                    .map(op -> {
+                        HashMap<String, Object> ob = new HashMap<>();
+                        ob.put("name", op.name);
+                        ob.put("description", op.description);
+                        ob.put("thousandValue", op.thousandValue);
+                        ob.put("basicOperation", op.basicOperation);
+                        ob.put("billed", op.billed);
+                        ob.put("key", op.key);
+                        return ob;
+                    }).collect(Collectors.toList()));
         }
         return map;
     }

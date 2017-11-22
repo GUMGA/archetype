@@ -22,6 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.util.*;
 
@@ -63,6 +66,7 @@ public class SecurityIntegration {
             op.add(gumgaOperationTO);
         }
 
+        op.addAll(SecurityHelper.listMyOperations("io.gumga"));
         op.addAll(SecurityHelper.listMyOperations(""));
         return op;
     }
@@ -541,6 +545,19 @@ public class SecurityIntegration {
         final String url = propertiesService.software();
         software = restTemplate().exchange(url, HttpMethod.POST, new HttpEntity<>(software, headers), Map.class).getBody();
         return (Map) software.get("data");
+    }
+
+    /**
+     * Mescla Operações no software
+     *
+     * @param headers Cabeçalho para requisição (ex: gumgaToken)
+     */
+    public void checkOperationsSoftware(final HttpHeaders headers, String softwareName, List operationsOfSoftware) {
+        final String url = propertiesService.software() + "/check-operations";
+        Map obj = new HashMap();
+        obj.put("softwareName", softwareName);
+        obj.put("operations", operationsOfSoftware);
+        restTemplate().exchange(url, HttpMethod.POST, new HttpEntity<>(obj, headers), Object.class);
     }
 
     /**
