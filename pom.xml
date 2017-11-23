@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.gumga</groupId>
   <artifactId>gumga-archetype</artifactId>
-  <version>1.5.12</version>
+  <version>1.5.13</version>
   <packaging>maven-archetype</packaging>
   <name>gumga-archetype</name>
   <description>Project archetype for GUMGA</description>
