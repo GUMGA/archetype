@@ -51,7 +51,7 @@ public class SecurityIntegration {
      * Operações do Software
      */
     public static final List<OperationExpression> operations = Arrays.asList(
-            new OperationExpression("ALL_OPERATIONS", BASE + ".*", ".*")
+            new OperationExpression("CRUD-${parentArtifactId}", BASE + ".*", ".*")
     );
 
     /**
