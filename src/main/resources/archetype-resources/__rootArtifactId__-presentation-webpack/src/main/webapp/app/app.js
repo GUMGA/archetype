@@ -1,7 +1,11 @@
 'use strict';
+const env = process.env.NODE_ENV == "production" ? require('./environments/environment.prod').env : require('./environments/environment').env;
+
+Object.keys(env).forEach(key => window[key] = env[key]);
 require('./import-libs');
 require('./import-styles');
 require('./import-modules');
+
 
 angular.module('gumga.core', [
       'gumga.rest',

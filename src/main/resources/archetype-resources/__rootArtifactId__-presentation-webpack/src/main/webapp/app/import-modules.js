@@ -1,4 +1,3 @@
-require("./apiLocations");
 require("./modules/login/module");
 require("./modules/common/module");
 require("./modules/gumgatagdefinition/module");

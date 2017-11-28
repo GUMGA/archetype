@@ -236,12 +236,15 @@
                         <include>**/*.html</include>
                         <include>**/*.json</include>
                         <include>**/*.xml</include>
-                        <include>**/apiLocations.js</include>
+                        <include>**/environment.js</include>
+                        <include>**/environment.prod.js</include>
                     </includes>
                 </fileSet>
                 <fileSet encoding="UTF-8">
                     <directory>src/main/webapp</directory>
                     <includes>
+                        <include>**/environment.js</include>
+                        <include>**/environment.prod.js</include>
                         <include>.babelrc</include>
                         <include>.jshintrc.json</include>
                         <include>.jshintrc</include>

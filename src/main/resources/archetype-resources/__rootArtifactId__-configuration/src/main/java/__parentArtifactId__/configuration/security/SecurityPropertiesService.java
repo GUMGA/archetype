@@ -212,7 +212,7 @@ public class SecurityPropertiesService {
      * @return url
      */
     public String softwareByName(String name) {
-        return replace("/publicoperations", Url.SOFTWARE + "?aq=obj.name like '%" + name + "%'");
+        return replace("/publicoperations", Url.SOFTWARE + "?aq=obj.name = '" + name + "'");
     }
 
     /**

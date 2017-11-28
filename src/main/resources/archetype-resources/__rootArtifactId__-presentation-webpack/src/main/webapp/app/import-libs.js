@@ -7,7 +7,6 @@ require("script-loader!../node_modules/@uirouter/angularjs/release/angular-ui-ro
 require("script-loader!../node_modules/bootstrap/dist/js/bootstrap.min");
 require("script-loader!../node_modules/es5-shim/es5-shim.min");
 require("script-loader!../resources/javascript/bootstrap-notify.min");
-require("script-loader!../app/apiLocations");
 require("script-loader!../node_modules/mousetrap/mousetrap.min");
 require("script-loader!../node_modules/ng-img-crop/compile/minified/ng-img-crop");
 require("script-loader!../node_modules/moment/min/moment.min");

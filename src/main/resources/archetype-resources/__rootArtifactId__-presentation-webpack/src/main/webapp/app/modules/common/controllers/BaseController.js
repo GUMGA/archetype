@@ -1,6 +1,5 @@
 
 const BaseController = ($timeout, $sce, BaseService, $state, $scope, gumgaController, $filter, $compile, GumgaWebStorage) => {
-    document.querySelector('.gumga-layout nav.gl-nav').classList.remove('collapsed')
     $scope.keysJsonUrl = []
     $scope.gumgaMenu = []
     $scope.organizations = []
@@ -22,11 +21,7 @@ const BaseController = ($timeout, $sce, BaseService, $state, $scope, gumgaContro
     BaseService.listOrganizations()
         .then(function(response) {
             $scope.organizations = response.data
-        })
-
-    $scope.navCollapse = function () {
-        document.querySelector('.gumga-layout nav.gl-nav').classList.toggle('collapsed')
-    }
+        });
 
     $scope.changeOrganization = function(organization) {
         BaseService.changeOrganization(organization.id)
