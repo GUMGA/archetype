@@ -12,6 +12,7 @@ require("script-loader!../node_modules/ng-img-crop/compile/minified/ng-img-crop"
 require("script-loader!../node_modules/moment/min/moment.min");
 require("script-loader!../gumga-layout/gumga-layout.min");
 require("script-loader!../node_modules/gumga-login/dist/gumga-login.min");
+require("script-loader!../node_modules/sweetalert/dist/sweetalert.min");
 require("script-loader!../i18n/angular-locale_pt-br");
 require("script-loader!../node_modules/moment-timezone/builds/moment-timezone-with-data.min");
 require("script-loader!../node_modules/gumga-rest-ng/dist/gumga-rest.min");
