@@ -2,7 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   color: #212121;
-  background-color: #ECEFF1;
+  background-color: #F5F5F5;
 }
 a {
   color: #212121;
@@ -2764,7 +2764,7 @@ gl-menu ul > li {
   padding: 8px 10px 8px 16px;
 }
 gl-menu ul > li:hover {
-  background-color: #ECEFF1;
+  background-color: #F5F5F5;
 }
 gl-menu ul > li.header:hover,
 gl-menu ul > li.header > a:hover {
@@ -2914,7 +2914,7 @@ main > .content {
   background-color: #EAEAEA;
 }
 .bg-background {
-  background-color: #ECEFF1;
+  background-color: #F5F5F5;
 }
 .cl-dark-primary {
   color: #00796B;
@@ -2941,7 +2941,7 @@ main > .content {
   color: #EAEAEA;
 }
 .cl-background {
-  color: #ECEFF1;
+  color: #F5F5F5;
 }
 .bd-dark-primary {
   border-color: #00796B !important;
@@ -2968,7 +2968,7 @@ main > .content {
   border-color: #EAEAEA !important;
 }
 .bd-background {
-  border-color: #ECEFF1 !important;
+  border-color: #F5F5F5 !important;
 }
 .slide-in-right {
   -webkit-animation: slide-in-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
