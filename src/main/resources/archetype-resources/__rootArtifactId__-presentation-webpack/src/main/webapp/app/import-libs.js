@@ -26,7 +26,7 @@ require("script-loader!../node_modules/gumga-mask-ng/dist/gumga-mask.min");
 require("script-loader!../node_modules/gumga-upload-ng/dist/gumga-upload.min");
 require("script-loader!../node_modules/gumga-custom-fields-ng/dist/gumga-custom-fields.min");
 require("script-loader!../node_modules/gumga-form-buttons-ng/dist/gumga-form-buttons.min");
-require("script-loader!../node_modules/gumga-counter/dist/gumga-counter.min");
+require("script-loader!../node_modules/gumga-counter-ng/dist/gumga-counter.min");
 require("script-loader!../node_modules/gumga-breadcrumb/dist/gumga-breadcrumb.min");
 require("script-loader!../node_modules/gumga-confirm/dist/gumga-confirm.min");
 require("script-loader!../node_modules/gumga-one-to-many-ng/dist/gumga-one-to-many.min");
