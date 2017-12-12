@@ -945,7 +945,7 @@ textarea.form-control.gmd ~ label.fixed {
   width: 0;
   bottom: 0;
   position: absolute;
-  background: #00796B;
+  background-color: #00796B;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -1117,6 +1117,10 @@ gmd-select-search .input-group-addon {
 }
 .word-required {
   color: #dd2c00;
+}
+.form-control.gmd~label {
+  font-size: 1rem;
+  line-height: 1.42857143;
 }
 .nav-tabs.gmd > li > a {
   border-radius: 0;
@@ -1321,6 +1325,9 @@ gmd-option a.select-option {
   height: 48px;
   display: flex !important;
   align-items: center;
+}
+ul.organizations ul.dropdown-menu div.form-group input {
+  padding: 0px 10px 0 10px;
 }
 .panel.gmd {
   border: 0;
@@ -2264,6 +2271,10 @@ menu-shrink:not([class~="fixed"]) .main-menu:not(:hover) li.header > a:after {
   top: 0;
   left: 24px;
   color: #ccc;
+}
+menu-shrink ul li.disabled {
+  pointer-events: none !important;
+  opacity: 0.4 !important;
 }
 menu-shrink .menu-header {
   height: 52px;
