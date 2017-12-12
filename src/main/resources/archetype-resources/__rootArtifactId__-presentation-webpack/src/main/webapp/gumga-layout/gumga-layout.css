@@ -1119,7 +1119,7 @@ gmd-select-search .input-group-addon {
   color: #dd2c00;
 }
 .form-control.gmd~label {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.42857143;
 }
 .nav-tabs.gmd > li > a {
