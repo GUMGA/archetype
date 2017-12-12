@@ -117,7 +117,7 @@ angular.module('app.core', [
       if (loading) $timeout(() => loading.css({ display: $http.pendingRequests.length > 0 ? 'block' : 'none' }));
     };
 
-    $httpProvider.interceptors.push(function ($q, $injector, $timeout, $filter) {
+    $httpProvider.interceptors.push(function ($q, $injector, $timeout, $filter, $gmdAlert) {
       return {
         'request': function (config) {
           config.headers['gumgaToken'] = window.sessionStorage.getItem('user') ? JSON.parse(window.sessionStorage.getItem('user')).token : 0
@@ -133,7 +133,7 @@ angular.module('app.core', [
           var $state = $injector.get('$state')
           var GumgaAlert = $injector.get('GumgaAlert')
           if (rejection.status == 404) {
-            GumgaAlert.createDangerMessage("404", "Verifique se o endereço foi digitado corretamente.");
+            $gmdAlert.error('404', 'Verifique se o endereço foi digitado corretamente.', 3000);
             return;
           }
           var error = {
@@ -148,7 +148,7 @@ angular.module('app.core', [
             sessionStorage.clear();
             localStorage.clear();
             $state.go('app.login');
-            GumgaAlert.createDangerMessage("Login necessário", "Sua sessão expirou, faça o login novamente.");
+            $gmdAlert.error('Login necessário', 'Sua sessão expirou, faça o login novamente.', 3000);
           }
           if (error.title === 'OPERATION_NOT_ALLOWED') {
             error.message = rejection.data.operation
@@ -156,7 +156,7 @@ angular.module('app.core', [
           if (error.title === 'ConstraintViolation') {
             error.message = 'Estes dados não podem ser deletados, pois estão sendo utilizado por outros registros.'
           }
-          GumgaAlert.createDangerMessage($filter('gumgaTranslate')(error.title, 'exception'), error.message)
+          $gmdAlert.error($filter('gumgaTranslate')(error.title, 'exception'), error.message, 3000);
           rejection.status === 403 && ($state.go('app.login'));
           return $q.reject(rejection);
         }
