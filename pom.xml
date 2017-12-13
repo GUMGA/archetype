@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>io.gumga</groupId>
-  <artifactId>gumga-archetype</artifactId>
-  <version>1.13.0</version>
-  <packaging>maven-archetype</packaging>
-  <name>gumga-archetype</name>
-  <description>Project archetype for GUMGA</description>
-  <url>https://github.com/gumga</url>
-      <organization>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.gumga</groupId>
+    <artifactId>gumga-archetype</artifactId>
+    <version>2.0.0</version>
+    <packaging>maven-archetype</packaging>
+    <name>gumga-archetype</name>
+    <description>Project archetype for GUMGA</description>
+    <url>https://github.com/gumga</url>
+    <organization>
         <name>Gumga</name>
         <url>http://gumga.io</url>
     </organization>
 
-   <properties>
+    <properties>
         <java.versao>1.8</java.versao>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-<licenses>
-    <license>
-      <name>GNU General Public License (GPL)</name>
-      <url>http://www.gnu.org/licenses/gpl.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL)</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
 
-  <developers>
-          <developer>
-              <id>gumga</id>
-              <name>Gumga</name>
-              <email>gumgait@gmail.com</email>
-              <organization>Gumga</organization>
-              <organizationUrl>http://gumga.io</organizationUrl>
-              <roles>
-                  <role>architect</role>
-                  <role>developer</role>
-              </roles>
-          </developer>
-  </developers>
+    <developers>
+        <developer>
+            <id>gumga</id>
+            <name>Gumga</name>
+            <email>gumgait@gmail.com</email>
+            <organization>Gumga</organization>
+            <organizationUrl>http://gumga.io</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 
 
-
-  <scm>
+    <scm>
         <connection>scm:git:git@github.com:GUMGA/archetype.git</connection>
         <developerConnection>scm:git:git@github.com:GUMGA/archetype.git</developerConnection>
         <url>https://github.com/GUMGA/archetype</url>
 
-  </scm>
+    </scm>
     <build>
-    <extensions>
-        <extension>
-            <groupId>org.apache.maven.archetype</groupId>
-            <artifactId>archetype-packaging</artifactId>
-            <version>2.4</version>
-        </extension>
-    </extensions>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>2.4</version>
+            </extension>
+        </extensions>
     </build>
     <profiles>
         <profile>
