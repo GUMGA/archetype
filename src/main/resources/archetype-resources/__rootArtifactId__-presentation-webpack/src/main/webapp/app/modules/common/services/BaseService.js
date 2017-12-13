@@ -9,6 +9,10 @@ const BaseService = ($http, GumgaRest, $q) => {
         return $http.get('./keys.json')
     }
 
+    Service.getStateLabels = () => {
+        return $http.get('./state-label.json');
+    }
+
     Service.listOrganizations = () => {
         var usr = JSON.parse(sessionStorage.getItem('user'))
         if(usr && usr.token) {

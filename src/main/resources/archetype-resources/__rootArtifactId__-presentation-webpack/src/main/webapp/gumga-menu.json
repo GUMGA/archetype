@@ -1,14 +1,14 @@
 [
 	{
 		"type": "item",
-		"label": "Welcome",
+		"label": "Página Inicial",
 		"state": "welcome.home",
 		"icon": "home",
 		"key": "CRUD-BASE"
 	},
 	{
 		"type": "item",
-		"label": "Configurations",
+		"label": "Configurações",
 		"icon": "settings",
 		"key": "CONFIGURATION",
 		"children": [

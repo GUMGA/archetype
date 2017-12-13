@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="panel gmd">
-      <div class="panel-heading"><label class="control-label" gumga-translate-tag="gumgacustomfield"></label></div>
       <div class="panel-body">
         <form name="GumgaCustomFieldForm" gumga-form novalidate>
           <div class="row">
@@ -16,7 +15,8 @@
             </div>
             <div class="col-md-6">
               <gmd-input>
-                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_name" ng-model="gumgacustomfield.data.name"/>
+                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_name" ng-model="gumgacustomfield.data.name"
+                />
                 <span class="bar"></span>
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.name">name</label>
               </gmd-input>
@@ -25,7 +25,8 @@
           <div class="row">
             <div class="col-md-6">
               <gmd-input>
-                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_description" ng-model="gumgacustomfield.data.description"/>
+                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_description" ng-model="gumgacustomfield.data.description"
+                />
                 <span class="bar"></span>
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.description">description</label>
               </gmd-input>
@@ -41,13 +42,15 @@
           <div class="row">
             <div class="col-md-2">
               <gmd-input>
-                <input class="form-control gmd" type="number" gumga-error name="gumgacustomfield_data_visualizationOrder" ng-model="gumgacustomfield.data.visualizationOrder"/>
+                <input class="form-control gmd" type="number" gumga-error name="gumgacustomfield_data_visualizationOrder" ng-model="gumgacustomfield.data.visualizationOrder"
+                />
                 <span class="bar"></span>
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.visualizationOrder">visualizationOrder</label>
               </gmd-input>
             </div>
             <div class="col-md-2 col-md-offset-8">
-              <button type="button" class="btn btn-block" ng-class="{'gmd raised btn-success': gumgacustomfield.data.active, 'gmd raised btn-default': !gumgacustomfield.data.active}" name="active" ng-model="gumgacustomfield.data.active" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+              <button type="button" class="btn btn-block" ng-class="{'gmd raised btn-success': gumgacustomfield.data.active, 'gmd raised btn-default': !gumgacustomfield.data.active}"
+                name="active" ng-model="gumgacustomfield.data.active" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
                 <span ng-show="gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.active">Active</span>
                 <span ng-show="!gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.inactive">Inactive</span>
               </button>
@@ -60,21 +63,21 @@
             <div class="row">
               <div class="col-md-4">
                 <gmd-input>
-                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionsCollection"/>
+                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionsCollection" />
                   <span class="bar"></span>
                   <label class="control-label" gumga-translate-tag="gumgacustomfield.optionsCollection">optionsCollection</label>
                 </gmd-input>
               </div>
               <div class="col-md-4">
                 <gmd-input>
-                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionValueField"/>
+                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionValueField" />
                   <span class="bar"></span>
                   <label class="control-label" gumga-translate-tag="gumgacustomfield.optionValueField">optionValueField</label>
                 </gmd-input>
               </div>
               <div class="col-md-4">
                 <gmd-input>
-                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionLabelField"/>
+                  <input class="form-control gmd" type="text" gumga-error ng-model="gumgacustomfield.data.optionLabelField" />
                   <span class="bar"></span>
                   <label class="control-label" gumga-translate-tag="gumgacustomfield.optionLabelField">optionLabelField</label>
                 </gmd-input>
@@ -110,7 +113,8 @@
           <div class="row">
             <div class="col-md-12">
               <gmd-input>
-                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_validationDescription" ng-model="gumgacustomfield.data.validationDescription"/>
+                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_validationDescription" ng-model="gumgacustomfield.data.validationDescription"
+                />
                 <span class="bar"></span>
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.validationDescription">validationDescription</label>
               </gmd-input>
@@ -133,22 +137,18 @@
           <div class="row">
             <div class="col-md-12">
               <gmd-input>
-                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_translateKey" ng-model="gumgacustomfield.data.translateKey"/>
+                <input class="form-control gmd" type="text" gumga-error name="gumgacustomfield_data_translateKey" ng-model="gumgacustomfield.data.translateKey"
+                />
                 <span class="bar"></span>
                 <label class="control-label" gumga-translate-tag="gumgacustomfield.translateKey">translateKey</label>
               </gmd-input>
             </div>
           </div>
 
-          <gumga-form-buttons
-                  back="gumgacustomfield.list"
-                  submit="gumgacustomfield.methods.put(gumgacustomfield.data)"
-                  position="right"
-                  valid="GumgaCustomFieldForm.$valid"
-                  confirm-dirty="true"
-                  continue="false">
-          </gumga-form-buttons>
 
+          <gumga-form-buttons class="gmd raised" back="gumgacustomfield.list" submit="gumgacustomfield.methods.put(gumgacustomfield.data)"
+            position="right" should-continue="shouldContinue" valid="GumgaCustomFieldForm.$valid" confirm-dirty="true" continue="continue">
+          </gumga-form-buttons>
         </form>
       </div>
     </div>

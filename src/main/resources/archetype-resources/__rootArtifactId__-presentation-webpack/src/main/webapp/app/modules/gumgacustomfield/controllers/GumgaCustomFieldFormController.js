@@ -1,24 +1,25 @@
 
-const GumgaCustomFieldFormController = (GumgaCustomFieldService, $state, entity, $scope, gumgaController) => {
-
+const GumgaCustomFieldFormController = (GumgaCustomFieldService, $state, entity, $scope, gumgaController, $gmdAlert) => {
+  $scope.continue = !$state.params.id
+  GumgaCustomFieldService.resetDefaultState();
   gumgaController.createRestMethods($scope, GumgaCustomFieldService, 'gumgacustomfield');
 
   $scope.clazzes = [
-    {label: 'ClasseA', value: 'br.pacote.domain.model.ClasaseA'},
-    {label: 'ClasseB', value: 'br.pacote.domain.model.ClasaseB'},
-    {label: 'ClasseC', value: 'br.pacote.domain.model.ClasaseC'}
+    { label: 'ClasseA', value: 'br.pacote.domain.model.ClasaseA' },
+    { label: 'ClasseB', value: 'br.pacote.domain.model.ClasaseB' },
+    { label: 'ClasseC', value: 'br.pacote.domain.model.ClasaseC' }
   ];
   $scope.customFields = [
-    {label: 'Texto', value: 'TEXT'},
-    {label: 'Número', value: 'NUMBER'},
-    {label: 'Data', value: 'DATE'},
-    {label: 'Booleano', value: 'LOGIC'},
-    {label: 'Seleção', value: 'SELECTION'}
+    { label: 'Texto', value: 'TEXT' },
+    { label: 'Número', value: 'NUMBER' },
+    { label: 'Data', value: 'DATE' },
+    { label: 'Booleano', value: 'LOGIC' },
+    { label: 'Seleção', value: 'SELECTION' }
   ];
   $scope.gumgacustomfield.data = entity.data || {};
   $scope.continue = {};
 
-  $scope.$watch('gumgacustomfield.data.type', function(newValue, oldValue) {
+  $scope.$watch('gumgacustomfield.data.type', function (newValue, oldValue) {
     if (
       ($scope.gumgacustomfield.data.id == null) ||
       ($scope.gumgacustomfield.data.id != null && newValue != oldValue)
@@ -34,12 +35,21 @@ const GumgaCustomFieldFormController = (GumgaCustomFieldService, $state, entity,
   });
 
 
-  $scope.gumgacustomfield.on('putSuccess',function(data){
-    $state.go('gumgacustomfield.list');
+  $scope.gumgacustomfield.on('putSuccess', function (data) {
+    $gmdAlert.success('Sucesso!', 'Seu registro foi adicionado!', 3000);
+    if ($scope.shouldContinue) {
+      $scope.gumgacustomfield.data = {};
+    } else {
+      $state.go('gumgacustomfield.list');
+    }
+  });
+
+  $scope.gumgacustomfield.on('putError', function (data) {
+    $gmdAlert.error('Ops!', 'Acho que algo deu errado!', 3000);
   });
 
 }
 
-GumgaCustomFieldFormController.$inject = ['GumgaCustomFieldService', '$state', 'entity', '$scope', 'gumgaController'];
+GumgaCustomFieldFormController.$inject = ['GumgaCustomFieldService', '$state', 'entity', '$scope', 'gumgaController', '$gmdAlert'];
 
 module.exports = GumgaCustomFieldFormController;

@@ -8,26 +8,14 @@ const BaseController = ($timeout, $sce, BaseService, $state, $scope, gumgaContro
 
     $scope.orgAtual = JSON.parse(sessionStorage.getItem('user'))
 
-    function getItemByName(menu, key, callback){
-        menu.forEach(function(item){
-            if(item.state == key){
-                callback(item);
-            }else{
-                if(item.children){
-                    return getItemByName(item.children, key, callback);
-                }
-            }
-        })
-    }
-
-    $scope.getTitlePage = (menu) => {
-        getItemByName(menu, $state.current.name, item => $scope.title = item.label);
-    }
+    BaseService.getStateLabels()
+    .then(resp => {
+        $scope.title = resp.data[$state.current.name] || $state.current.name;
+    });
 
     BaseService.getGumgaMenu()
         .then(function(response) {
             $scope.gumgaMenu = response.data;
-            $scope.getTitlePage($scope.gumgaMenu);
         })
 
     BaseService.getKeysJsonUrl()

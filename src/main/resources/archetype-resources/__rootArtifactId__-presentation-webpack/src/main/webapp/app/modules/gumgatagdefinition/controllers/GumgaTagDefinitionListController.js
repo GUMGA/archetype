@@ -1,13 +1,12 @@
 
-const GumgaTagDefinitionListController = ($scope, GumgaTagDefinitionService, gumgaController) => {
-
-    gumgaController.createRestMethods($scope, GumgaTagDefinitionService, 'gumgatagdefinition');
-
+const GumgaTagDefinitionListController = ($scope, GumgaTagDefinitionService, gumgaController, $gmdAlert) => {
     GumgaTagDefinitionService.resetDefaultState();
+    gumgaController.createRestMethods($scope, GumgaTagDefinitionService, 'gumgatagdefinition');
 
     $scope.gumgatagdefinition.execute('get');
 
     $scope.gumgatagdefinition.on('deleteSuccess', () => {
+        $gmdAlert.success('Sucesso!', 'Seu registro foi removido!', 2000);
         $scope.gumgatagdefinition.execute('get');
     });
 
@@ -18,7 +17,7 @@ const GumgaTagDefinitionListController = ($scope, GumgaTagDefinitionService, gum
 
     $scope.search = (field, param) => {
         $scope.query = { searchFields: [field], q: param }
-        $scope.gumgatagdefinition.methods.search(field,param)
+        $scope.gumgatagdefinition.methods.search(field, param)
     }
 
     $scope.advancedSearch = (param) => {
@@ -35,20 +34,23 @@ const GumgaTagDefinitionListController = ($scope, GumgaTagDefinitionService, gum
         selection: 'multi',
         materialTheme: true,
         itemsPerPage: [5, 10, 15, 30],
+        empty: {
+            enabled: true
+        },
         columnsConfig: [{
-                name: 'name',
-                title: '<span gumga-translate-tag="gumgatagdefinition.name">name</span>',
-                content: '{{$value.name}}',
-                sortField: 'name'
-            },
-            {
-                name: 'button',
-                title: ' ',
-                content: '<span class="pull-right"><a class="btn btn-primary btn-sm" ui-sref="gumgatagdefinition.edit({id: {{$value.id}} })"><i class="glyphicon glyphicon-pencil"></i></a></span>'
-            }]
+            name: 'name',
+            title: '<span gumga-translate-tag="gumgatagdefinition.name">name</span>',
+            content: '{{$value.name}}',
+            sortField: 'name'
+        },
+        {
+            name: 'button',
+            title: ' ',
+            content: '<span class="pull-right"><a class="btn btn-primary btn-sm" ui-sref="gumgatagdefinition.edit({id: {{$value.id}} })"><i class="glyphicon glyphicon-pencil"></i></a></span>'
+        }]
     };
 
 }
 
-GumgaTagDefinitionListController.$inject = ['$scope', 'GumgaTagDefinitionService', 'gumgaController'];
+GumgaTagDefinitionListController.$inject = ['$scope', 'GumgaTagDefinitionService', 'gumgaController', '$gmdAlert'];
 module.exports = GumgaTagDefinitionListController;
