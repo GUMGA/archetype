@@ -91,10 +91,13 @@ public class WebConfiguration extends WebMvcConfigurerAdapter implements WebAppl
 
     private MappingJackson2HttpMessageConverter jacksonConverter() {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new Hibernate4Module());
+        Hibernate4Module hibernate4Module = new Hibernate4Module();
+        hibernate4Module.disable(Hibernate4Module.Feature.USE_TRANSIENT_ANNOTATION);
+        mapper.registerModule(hibernate4Module);
         mapper.registerModule(new JodaModule());
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         mapper.setDateFormat(new ISO8601DateFormat());
+//        mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
         mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE);
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
